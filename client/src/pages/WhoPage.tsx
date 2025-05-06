@@ -7,8 +7,9 @@ import jose from '../assets/jose.jpg'
 
 const AboutPage: React.FC = () => {
   return (
+    <section id="quienes-somos" className="text-muted-foreground mb-4">
     <div className="container mx-auto max-w-4xl px-4 py-12">
-      <h1 className="font-heading font-bold text-3xl text-foreground mb-6">¿Quienes somos?</h1>
+      <h1 className="font-heading font-bold text-3xl text-foreground mb-6">¿Quiénes somos?</h1>
       
       <div className="prose max-w-none">
         <p className="text-muted-foreground mb-4">
@@ -66,6 +67,7 @@ const AboutPage: React.FC = () => {
         />
       </div>
     </div>
+    </section>
   );
 };
 

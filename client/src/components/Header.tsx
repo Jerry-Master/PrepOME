@@ -30,7 +30,7 @@ const Header: React.FC = () => {
   // Define navigation links - usando el formato adecuado para el enrutamiento basado en hash
   const navLinks = [
     { text: '¿Qué es?', href: '/que-es' },
-    { text: '¿Quienes somos?', href: '/quien-es' },
+    { text: '¿Quiénes somos?', href: '/quien-es' },
     { text: 'Calendario', href: '/calendario' },
     { text: 'Material', href: '/material' },
     { text: 'Enlaces', href: '/enlaces' },

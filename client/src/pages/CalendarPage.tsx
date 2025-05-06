@@ -114,7 +114,7 @@ const CalendarPage: React.FC = () => {
 
   return (
     <div className="container mx-auto max-w-4xl px-4 py-12">
-      <h1 className="font-heading font-bold text-3xl text-foreground mb-6">Calendario Olimpiada Matemática 2025-2026</h1>
+      <h1 id="calendario" className="font-heading font-bold text-3xl text-foreground mb-6">Calendario Olimpiada Matemática 2025-2026</h1>
       
       <p className="text-muted-foreground mb-8">A continuación, presentamos las fechas más importantes relacionadas con la Olimpiada Matemática para el curso 2025-2026. Las fechas exactas pueden estar sujetas a pequeñas variaciones, que serán comunicadas con antelación.</p>
       
