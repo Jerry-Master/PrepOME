@@ -6,7 +6,7 @@ import HashLink from './HashLink';
 const HeroSection: React.FC = () => {
   return (
     <section className="hero-section flex items-center justify-center" style={{
-      backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://static.grupojoly.com/clip/6f82fbbd-1d41-457e-9a29-b179e7db3512_source-aspect-ratio_1600w_0.jpg")',
+      backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://raw.githubusercontent.com/Jerry-Master/PrepOME/main/client/src/assets/hero-section.jpg")',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       height: '70vh'
