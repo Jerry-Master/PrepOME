@@ -100,7 +100,7 @@ const MaterialPage: React.FC = () => {
     {
       title: "The standard dozen",
       description: "Desigualdades de uso común que deben saberse.",
-      type: "book" as const,
+      type: "file" as const,
       viewLink: "https://artofproblemsolving.com/articles/files/MildorfInequalities.pdf"
     }
   ];
