@@ -92,7 +92,7 @@ const MaterialPage: React.FC = () => {
       viewLink: "https://www.amazon.com/104-Number-Theory-Problems-Training/dp/0817645276?ie=UTF8&s=books&qid=1199806669&sr=8-1"
     },
     {
-      title: "[Soberon] Problem-Solving Methods in Combinatorics",
+      title: "Problem-Solving Methods in Combinatorics",
       description: "Libro de problemas de combinatoria.",
       type: "book" as const,
       viewLink: "https://www.amazon.es/Problem-Solving-Methods-Combinatorics-Approach-Olympiad/dp/3034805969"
