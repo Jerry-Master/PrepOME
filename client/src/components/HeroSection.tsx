@@ -37,13 +37,13 @@ const HeroSection: React.FC = () => {
                 <ExternalLink size={12} className="ml-1" />
               </HashLink>
         </p>
-        <a href="#subscription">
+        <HashLink to="/#subscription">
           <Button 
             className="bg-[#f57c00] hover:bg-[#ffad42] text-white font-bold py-3 px-6 rounded-lg shadow-lg"
           >
             Mantente informado
           </Button>
-        </a>
+        </HashLink>
       </div>
     </section>
   );

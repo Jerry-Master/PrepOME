@@ -1,7 +1,6 @@
 import React from 'react';
-import { useLocation } from 'wouter';
+import { useNavigate } from 'react-router-dom';
 
-// Definimos la interfaz para nuestro componente HashLink
 interface HashLinkProps {
   to: string;
   children: React.ReactNode;
@@ -9,44 +8,73 @@ interface HashLinkProps {
   onClick?: () => void;
 }
 
-// Componente para gestionar la navegación basada en hash compatible con GitHub Pages
+const scrollToTop = () => {
+  let attempts = 10;
+
+  const tryScrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    attempts--;
+    if (attempts > 0) {
+      // Check if scroll actually happened
+      if (window.scrollY === 0) {
+        // Scroll succeeded, stop trying
+        return;
+      }
+      // Retry after next frame
+      requestAnimationFrame(tryScrollTop);
+    }
+  };
+
+  tryScrollTop();
+};
+
 const HashLink = ({ to, children, className, onClick }: HashLinkProps) => {
-  const [_, navigate] = useLocation();
+  const navigate = useNavigate();
+
+  // Helper: wait for element to exist before scrolling
+  const scrollToHash = (hash: string) => {
+    if (!hash || hash === 'top') {
+      scrollToTop();
+      return;
+    }
+
+    const tryScroll = (attemptsLeft: number) => {
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else if (attemptsLeft > 0) {
+        // Retry after next animation frame, max 10 times (~160ms)
+        requestAnimationFrame(() => tryScroll(attemptsLeft - 1));
+      }
+      // else give up if element never appears
+    };
+
+    tryScroll(10);
+  };
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    
-    // Si hay un manejador de eventos adicional, lo ejecutamos
+
     if (onClick) {
       onClick();
     }
-    
-    // Navegamos a la ruta utilizando el hash
+
     navigate(to);
 
-    // Scroll logic
+    // Extract hash from to
     const [, hash] = to.split('#');
+    console.log(to);
+    console.log(hash);
 
+    // Wait a frame before attempting to scroll
     requestAnimationFrame(() => {
-      if (!hash || hash === 'top') {
-        // Scroll to top of page
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        // Scroll to target element
-        const element = document.getElementById(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+      scrollToHash(hash || '');
     });
   };
 
   return (
-    <a 
-      href={`#${to}`} 
-      className={className}
-      onClick={handleClick}
-    >
+    <a href={to} className={className} onClick={handleClick}>
       {children}
     </a>
   );

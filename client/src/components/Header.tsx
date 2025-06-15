@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import HashLink from './HashLink';
 import logoOme from '../assets/logoOMEgrande-276x300.jpg';
@@ -9,6 +10,7 @@ import { getIsMobile } from './utils'
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(getIsMobile());
+  const location = useLocation();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -34,7 +36,7 @@ const Header: React.FC = () => {
     { text: 'Calendario', href: '/calendario' },
     { text: 'Material', href: '/material' },
     { text: 'Enlaces', href: '/enlaces' },
-    { text: 'Contacto', href: '#footer' }, // Esto es un enlace de ancla, por lo que se mantiene como #
+    { text: 'Contacto', href: `${location.pathname}#footer` }, // Esto es un enlace de ancla, por lo que se mantiene como #
   ];
 
   return (
