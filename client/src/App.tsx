@@ -13,43 +13,44 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 
-// Reemplazamos el enrutamiento estándar por uno basado en hash
-// para mejor compatibilidad con GitHub Pages
+// Hook personalizado para hash-based routing (GitHub Pages friendly)
 const useHashLocation = () => {
-  const [loc, setLoc] = useState(window.location.hash.replace("#", "") || "/");
-  
+  const [loc, setLoc] = useState(() => {
+    const raw = window.location.hash.slice(1) || "/";
+    return raw.startsWith("/") ? raw : "/" + raw;
+  });
+
   useEffect(() => {
     const handler = () => {
-      const hash = window.location.hash.replace("#", "") || "/";
-      setLoc(hash);
+      const raw = window.location.hash.slice(1) || "/";
+      setLoc(raw.startsWith("/") ? raw : "/" + raw);
     };
-    
+
     window.addEventListener("hashchange", handler);
     return () => window.removeEventListener("hashchange", handler);
   }, []);
-  
+
   const navigate = (to: string) => {
     window.location.hash = to;
   };
-  
+
   return [loc, navigate];
 };
 
 function Router() {
-  // Usamos el hook personalizado para la navegación basada en hash
-  // @ts-ignore - Ignoramos errores de tipado ya que el formato es compatible con wouter
+  // Configurar Wouter para usar rutas basadas en hash
+  // @ts-ignore
   useLocation.use = useHashLocation;
-  
+
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/que-es" component={AboutPage}/>
-      <Route path="/quien-es" component={WhoPage}/>
-      <Route path="/calendario" component={CalendarPage}/>
-      <Route path="/material" component={MaterialPage}/>
-      <Route path="/enlaces" component={LinksPage}/>
-      
-      {/* Fallback to 404 */}
+      <Route path="/que-es" component={AboutPage} />
+      <Route path="/quien-es" component={WhoPage} />
+      <Route path="/calendario" component={CalendarPage} />
+      <Route path="/material" component={MaterialPage} />
+      <Route path="/enlaces" component={LinksPage} />
+      {/* Página 404 por defecto */}
       <Route component={NotFound} />
     </Switch>
   );
@@ -57,35 +58,36 @@ function Router() {
 
 function App() {
   const [location] = useLocation();
-  const normalizedLocation = location.replace(/\/+$/, ""); // remove trailing slashes
+  const normalizedLocation = location.replace(/\/+$/, "") || "/";
 
-  // Check if current path is unmatched (NotFound)
-  const isNotFound = ![
-    "",
+  const knownRoutes = [
+    "/",
     "/que-es",
     "/quien-es",
     "/calendario",
     "/material",
     "/enlaces"
-  ].includes(normalizedLocation);  
+  ];
+
+  const isNotFound = !knownRoutes.includes(normalizedLocation);
 
   return (
     <QueryClientProvider client={queryClient}>
-    {isNotFound ? (
-      <main className="flex-grow">
-        <Router />
-      </main>
-    ) : (
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow pt-20">
+      {isNotFound ? (
+        <main className="flex-grow">
           <Router />
         </main>
-        <Footer />
-      </div>
-    )}
-    <Toaster />
-  </QueryClientProvider>
+      ) : (
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-grow pt-20">
+            <Router />
+          </main>
+          <Footer />
+        </div>
+      )}
+      <Toaster />
+    </QueryClientProvider>
   );
 }
 
