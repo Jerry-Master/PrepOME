@@ -84,6 +84,24 @@ const MaterialPage: React.FC = () => {
       description: "Libro de referencia en el ámbito de problemas de geometría en olimpiadas matemáticas.",
       type: "book" as const,
       viewLink: "https://web.evanchen.cc/geombook.html"
+    },
+    {
+      title: "104 Number Theory Problems",
+      description: "Libro de un nivel avanzado de problemas de teoría de números.",
+      type: "book" as const,
+      viewLink: "https://www.amazon.com/104-Number-Theory-Problems-Training/dp/0817645276?ie=UTF8&s=books&qid=1199806669&sr=8-1"
+    },
+    {
+      title: "[Soberon] Problem-Solving Methods in Combinatorics",
+      description: "Libro de problemas de combinatoria.",
+      type: "book" as const,
+      viewLink: "https://www.amazon.es/Problem-Solving-Methods-Combinatorics-Approach-Olympiad/dp/3034805969"
+    },
+    {
+      title: "The standard dozen",
+      description: "Desigualdades de uso común que deben saberse.",
+      type: "book" as const,
+      viewLink: "https://artofproblemsolving.com/articles/files/MildorfInequalities.pdf"
     }
   ];
 
