@@ -61,9 +61,57 @@ const CalendarPage: React.FC = () => {
   // Datos de los eventos
   const events = [
     {
-      date: 'Septiembre 2025 - Marzo 2026',
-      title: 'Sesiones de preparación',
-      description: 'Se proporcionará un calendario más detallado de las sesiones de preparación. De manera tentativa, habrá sesiones todos los sábados, descansando un sábado cada mes.',
+      date: '18 octubre 2025',
+      title: 'Sesión de preparación: Geometría',
+      description: 'Se estudiarán técnicas comunes como angle chasing y teoremas típicos como Ceva y Menelao.',
+      link: {
+        url: "/#subscription",
+        description: "Suscríbete para estar informado",
+        external: false
+      },
+      location: "Facultad de Ciencias UGR",
+      important: true
+    },
+    {
+      date: '25 octubre 2025',
+      title: 'Sesión de preparación: Álgebra',
+      description: 'Se verá el standard dozen y otras herramientas relevantes.',
+      link: {
+        url: "/#subscription",
+        description: "Suscríbete para estar informado",
+        external: false
+      },
+      location: "Facultad de Ciencias UGR",
+      important: true
+    },
+    {
+      date: '22 noviembre 2025',
+      title: 'Sesión de preparación: Teoría de Números',
+      description: 'Se enseñarán los teoremas más relevantes como el pequeño teorema de Fermat y el teorema chino del resto.',
+      link: {
+        url: "/#subscription",
+        description: "Suscríbete para estar informado",
+        external: false
+      },
+      location: "Facultad de Ciencias UGR",
+      important: true
+    },
+    {
+      date: '30 noviembre 2025',
+      title: 'Sesión de preparación: Combinatoria',
+      description: 'Se estudiarán técnicas comunes como el uso de invariantes y el principio de inclusión-exclusión.',
+      link: {
+        url: "/#subscription",
+        description: "Suscríbete para estar informado",
+        external: false
+      },
+      location: "Facultad de Ciencias UGR",
+      important: true
+    },
+    {
+      date: '10 enero 2026',
+      title: 'Sesión de preparación: Problemas de años anteriores',
+      description: 'Esta sesión estará más orientada a resolver problemas variados.',
       link: {
         url: "/#subscription",
         description: "Suscríbete para estar informado",
