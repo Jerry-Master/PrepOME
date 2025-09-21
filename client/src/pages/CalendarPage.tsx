@@ -61,9 +61,21 @@ const CalendarPage: React.FC = () => {
   // Datos de los eventos
   const events = [
     {
+      date: '4 octubre 2025',
+      title: 'Sesión de preparación: Introducción',
+      description: 'Se resolverán problemas que no requieran conocimientos avanzados.',
+      link: {
+        url: "/#subscription",
+        description: "Suscríbete para estar informado",
+        external: false
+      },
+      location: "Facultad de Ciencias UGR",
+      important: true
+    },
+    {
       date: '18 octubre 2025',
-      title: 'Sesión de preparación: Geometría',
-      description: 'Se estudiarán técnicas comunes como angle chasing y teoremas típicos como Ceva y Menelao.',
+      title: 'Sesión de preparación: Por decidir',
+      description: 'Por decidir.',
       link: {
         url: "/#subscription",
         description: "Suscríbete para estar informado",
@@ -74,8 +86,8 @@ const CalendarPage: React.FC = () => {
     },
     {
       date: '25 octubre 2025',
-      title: 'Sesión de preparación: Álgebra',
-      description: 'Se verá el standard dozen y otras herramientas relevantes.',
+      title: 'Sesión de preparación: Por decidir',
+      description: 'Por decidir.',
       link: {
         url: "/#subscription",
         description: "Suscríbete para estar informado",
@@ -86,8 +98,8 @@ const CalendarPage: React.FC = () => {
     },
     {
       date: '22 noviembre 2025',
-      title: 'Sesión de preparación: Teoría de Números',
-      description: 'Se enseñarán los teoremas más relevantes como el pequeño teorema de Fermat y el teorema chino del resto.',
+      title: 'Sesión de preparación: Por decidir',
+      description: 'Por decidir.',
       link: {
         url: "/#subscription",
         description: "Suscríbete para estar informado",
@@ -98,20 +110,8 @@ const CalendarPage: React.FC = () => {
     },
     {
       date: '30 noviembre 2025',
-      title: 'Sesión de preparación: Combinatoria',
-      description: 'Se estudiarán técnicas comunes como el uso de invariantes y el principio de inclusión-exclusión.',
-      link: {
-        url: "/#subscription",
-        description: "Suscríbete para estar informado",
-        external: false
-      },
-      location: "Facultad de Ciencias UGR",
-      important: true
-    },
-    {
-      date: '10 enero 2026',
-      title: 'Sesión de preparación: Problemas de años anteriores',
-      description: 'Esta sesión estará más orientada a resolver problemas variados.',
+      title: 'Sesión de preparación: Por decidir',
+      description: 'Por decidir.',
       link: {
         url: "/#subscription",
         description: "Suscríbete para estar informado",
@@ -188,7 +188,7 @@ const CalendarPage: React.FC = () => {
           <li>La participación en la Fase Nacional está sujeta a los criterios de selección establecidos por cada comunidad autónoma.</li>
           <li>La selección para la Olimpiada Internacional se realizará entre los finalistas de la Fase Nacional.</li>
         </ul>
-        <p className="text-muted-foreground">Para cualquier duda relacionada con las fechas y ubicaciones, por favor contacta con la organización a través del <a href="mailto:olimpiada@ugr.es" className="text-primary hover:underline">correo electrónico</a> o el formulario de contacto.</p>
+        <p className="text-muted-foreground">Para cualquier duda relacionada con las fechas y ubicaciones, por favor contacta con la organización a través del <a href="mailto:pablomorales@ugr.es" className="text-primary hover:underline">correo electrónico</a> o el formulario de contacto.</p>
       </div>
     </div>
   );

@@ -102,6 +102,12 @@ const MaterialPage: React.FC = () => {
       description: "Desigualdades de uso común que deben saberse.",
       type: "file" as const,
       viewLink: "https://artofproblemsolving.com/articles/files/MildorfInequalities.pdf"
+    },
+    {
+      title: "Putnam and Beyond",
+      description: "Libro de problemas de nivel avanzado que cubre varios temas.",
+      type: "book" as const,
+      viewLink: "https://mathematicalolympiads.wordpress.com/wp-content/uploads/2012/08/putnam-and-beyond.pdf"
     }
   ];
 

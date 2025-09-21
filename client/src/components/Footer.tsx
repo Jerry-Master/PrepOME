@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
             </p>
             <p className="flex items-center mb-3">
               <Mail className="mr-3 text-[#f57c00]" size={18} />
-              <a href="mailto:olimpiada@ugr.es" className="text-primary-foreground/90 hover:text-[#f57c00] transition-colors duration-200">olimpiada@ugr.es</a>
+              <a href="mailto:pablomorales@ugr.es" className="text-primary-foreground/90 hover:text-[#f57c00] transition-colors duration-200">pablomorales@ugr.es</a>
             </p>
             {/* <p className="flex items-center">
               <Phone className="mr-3 text-[#f57c00]" size={18} />
