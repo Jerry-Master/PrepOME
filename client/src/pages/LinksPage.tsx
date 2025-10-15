@@ -77,6 +77,12 @@ const LinksPage: React.FC = () => {
       category: "resources"
     },
     {
+      title: "Preparación UJA",
+      description: "Página web con recursos para la preparación de olimpiadas hecha por José Miguel Manzano.",
+      url: "https://web.ujaen.es/eventos/omatematica/preparacion/index.php",
+      category: "resources"
+    },
+    {
       title: "European Girls' Mathematical Olympiad",
       description: "Olimpiada matemática internacional para estudiantes femeninas.",
       url: "https://www.egmo.org/",
