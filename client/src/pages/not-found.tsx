@@ -17,7 +17,7 @@ export default function NotFound() {
           </p>
           
           <a 
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+            href="https://preparaomegrx.es/" 
             className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary/90 transition-colors w-fit"
           >
             <Home size={16} />
