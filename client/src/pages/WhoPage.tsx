@@ -40,7 +40,7 @@ const AboutPage: React.FC = () => {
         Por norma general, las sesiones serán los sábados por la mañana, tendrán una duración de tres horas, y se realizarán en la facultad de ciencias de la Universidad de Granada. Consistirán en la resolución de problemas de otras ediciones, aprendiendo los resultados y técnicas más útiles en este tipo de problemas. Estas sesiones no tienen ningún coste económico para los participantes.
         </p>
 
-        <p className="text-muted-foreground mb-4">
+        {/* <p className="text-muted-foreground mb-4">
         <strong>¡Suscríbete<HashLink 
                 to={'/#subscription'} 
                 className="no-underline hover:underline inline-flex items-center ml-1"
@@ -48,7 +48,7 @@ const AboutPage: React.FC = () => {
                 aquí
                 <ExternalLink size={12} className="ml-1" />
               </HashLink>, no te pierdas las notificaciones más importantes!</strong>
-        </p>        
+        </p>         */}
       </div>
 
       <h1 id="nosotros" className="scroll-mt-20 font-heading font-bold text-3xl text-foreground mb-6">El equipo</h1>

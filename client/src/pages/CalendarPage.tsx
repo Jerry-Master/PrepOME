@@ -64,11 +64,11 @@ const CalendarPage: React.FC = () => {
       date: '4 octubre 2025',
       title: 'Sesión de preparación: Introducción',
       description: 'Se resolverán problemas que no requieran conocimientos avanzados.',
-      link: {
-        url: "/#subscription",
-        description: "Suscríbete para estar informado",
-        external: false
-      },
+      // link: {
+      //   url: "/#subscription",
+      //   description: "Suscríbete para estar informado",
+      //   external: false
+      // },
       location: "Facultad de Ciencias UGR",
       important: true
     },
@@ -76,11 +76,11 @@ const CalendarPage: React.FC = () => {
       date: '18 octubre 2025',
       title: 'Sesión de preparación: Combinatoria',
       description: 'Se tratarán las técnicas de coloración e invariantes.',
-      link: {
-        url: "/#subscription",
-        description: "Suscríbete para estar informado",
-        external: false
-      },
+      // link: {
+      //   url: "/#subscription",
+      //   description: "Suscríbete para estar informado",
+      //   external: false
+      // },
       location: "Facultad de Ciencias UGR",
       important: true
     },
@@ -88,11 +88,11 @@ const CalendarPage: React.FC = () => {
       date: '25 octubre 2025',
       title: 'Sesión de preparación: Álgebra',
       description: 'Los temas a tratar incluyen inducción y ecuaciones funcionales entre otros.',
-      link: {
-        url: "/#subscription",
-        description: "Suscríbete para estar informado",
-        external: false
-      },
+      // link: {
+      //   url: "/#subscription",
+      //   description: "Suscríbete para estar informado",
+      //   external: false
+      // },
       location: "Facultad de Ciencias UGR",
       important: true
     },
@@ -100,11 +100,11 @@ const CalendarPage: React.FC = () => {
       date: '22 noviembre 2025',
       title: 'Sesión de preparación: Geometría',
       description: 'Trataremos técnicas comunes como angle chasing y teoremas como Ceva y Menelao.',
-      link: {
-        url: "/#subscription",
-        description: "Suscríbete para estar informado",
-        external: false
-      },
+      // link: {
+      //   url: "/#subscription",
+      //   description: "Suscríbete para estar informado",
+      //   external: false
+      // },
       location: "Facultad de Ciencias UGR",
       important: true
     },
@@ -112,11 +112,11 @@ const CalendarPage: React.FC = () => {
       date: '29 noviembre 2025',
       title: 'Sesión de preparación: Teoría de números',
       description: 'Veremos el concepto de congruencias y módulos acompañado de resultados relevantes como el teorema de Euler.',
-      link: {
-        url: "/#subscription",
-        description: "Suscríbete para estar informado",
-        external: false
-      },
+      // link: {
+      //   url: "/#subscription",
+      //   description: "Suscríbete para estar informado",
+      //   external: false
+      // },
       location: "Facultad de Ciencias UGR",
       important: true
     },
