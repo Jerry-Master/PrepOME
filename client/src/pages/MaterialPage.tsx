@@ -75,6 +75,13 @@ const MaterialPage: React.FC = () => {
       type: "file" as const,
       downloadLink: "https://github.com/Jerry-Master/PrepOME/raw/refs/heads/main/Material/OME.zip",
       viewLink: "https://www.rsme.es/olimpiada-matematica-espanola/problemas-propuestos-y-resultados/"
+    },
+    {
+      title: "Coleccción histórica Competición Kurschak 1894-2003",
+      description: "Esta es la olimpiada más antigua del mundo.",
+      type: "file" as const,
+      downloadLink: "https://github.com/Jerry-Master/PrepOME/raw/refs/heads/main/Material/ek_competitions.pdf",
+      viewLink: "http://www.batmath.it/matematica/raccolte_es/ek_competitions/ek_competitions.pdf"
     }
   ];
 

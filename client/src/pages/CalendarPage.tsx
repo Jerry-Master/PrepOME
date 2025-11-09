@@ -81,7 +81,7 @@ const CalendarPage: React.FC = () => {
       //   description: "Suscríbete para estar informado",
       //   external: false
       // },
-      location: "Facultad de Ciencias UGR",
+      location: "Instituto de Matemáticas de la UGR",
       important: true
     },
     {
@@ -94,6 +94,18 @@ const CalendarPage: React.FC = () => {
       //   external: false
       // },
       location: "Facultad de Ciencias UGR",
+      important: true
+    },
+    {
+      date: '15 noviembre 2025',
+      title: 'Sesión de preparación: Resultados útiles',
+      description: 'Se tratarán técnicas variadas como el standard dozen o completar cuadrados.',
+      // link: {
+      //   url: "/#subscription",
+      //   description: "Suscríbete para estar informado",
+      //   external: false
+      // },
+      location: "Instituto de Matemáticas de la UGR",
       important: true
     },
     {
