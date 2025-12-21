@@ -70,7 +70,7 @@ const CalendarPage: React.FC = () => {
       //   external: false
       // },
       location: "Facultad de Ciencias UGR",
-      important: true
+      important: false
     },
     {
       date: '18 octubre 2025',
@@ -82,7 +82,7 @@ const CalendarPage: React.FC = () => {
       //   external: false
       // },
       location: "Instituto de Matemáticas de la UGR",
-      important: true
+      important: false
     },
     {
       date: '25 octubre 2025',
@@ -94,7 +94,7 @@ const CalendarPage: React.FC = () => {
       //   external: false
       // },
       location: "Facultad de Ciencias UGR",
-      important: true
+      important: false
     },
     {
       date: '15 noviembre 2025',
@@ -106,7 +106,7 @@ const CalendarPage: React.FC = () => {
       //   external: false
       // },
       location: "Instituto de Matemáticas de la UGR",
-      important: true
+      important: false
     },
     {
       date: '22 noviembre 2025',
@@ -118,7 +118,7 @@ const CalendarPage: React.FC = () => {
       //   external: false
       // },
       location: "Facultad de Ciencias UGR",
-      important: true
+      important: false
     },
     {
       date: '29 noviembre 2025',
@@ -130,22 +130,35 @@ const CalendarPage: React.FC = () => {
       //   external: false
       // },
       location: "Facultad de Ciencias UGR",
+      important: false
+    },
+    {
+      date: '10 enero 2026',
+      title: 'Simulacro de la fase local',
+      description: 'Examen de práctica.',
+      // link: {
+      //   url: "/#subscription",
+      //   description: "Suscríbete para estar informado",
+      //   external: false
+      // },
+      location: "Facultad de Ciencias UGR",
       important: true
     },
     {
-      date: 'Enero 2026',
+      date: '16 enero 2026',
       title: 'Fase local de la OME',
-      description: 'La prueba consta de dos exámenes de tres horas y medias con tres problemas cada uno.',
+      description: 'Se convoca a todos los participantes a las 9:45.',
       link: {
         url: "https://www.rsme.es/olimpiada-matematica-espanola/problemas-propuestos-y-resultados/",
         description: "Ver problemas años anteriores",
         external: true
       },
+      location: 'Aula C-01 de la Facultad de Ciencias de la UGR',
       important: true,
       idx: "local"
     },
     {
-      date: 'Febrero 2026',
+      date: '6-8 febrero 2026',
       title: 'Fase regional: Olimpiada Matemática Andaluza',
       description: 'La prueba consta de cuatro problemas a realizar en cuatro horas.',
       link: {
@@ -153,15 +166,15 @@ const CalendarPage: React.FC = () => {
         description: "Ver edición anterior",
         external: true
       },
-      location: 'Por decidir.',
+      location: 'Jerez (Cádiz)',
       important: true,
       idx: "autonomico"
     },
     {
-      date: 'Marzo - Mayo 2026',
+      date: '12-15 marzo 2026',
       title: 'Fase nacional de la OME',
       description: 'Al igual que en la fase local se compone de dos exámenes de tres problemas que deberán resolverse en tres horas y media cada uno.',
-      location: 'Por decidir.',
+      location: 'Las Rozas (Madrid)',
       link: {
         url: "http://ome2025.uniovi.es/",
         description: "Ver edición anterior",
