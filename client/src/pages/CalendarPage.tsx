@@ -142,7 +142,7 @@ const CalendarPage: React.FC = () => {
       //   external: false
       // },
       location: "Facultad de Ciencias UGR",
-      important: true
+      important: false
     },
     {
       date: '16 enero 2026',
@@ -154,8 +154,32 @@ const CalendarPage: React.FC = () => {
         external: true
       },
       location: 'Aula C-01 de la Facultad de Ciencias de la UGR',
-      important: true,
+      important: false,
       idx: "local"
+    },
+    {
+      date: '24 enero 2026',
+      title: 'Sesión de preparación: Problemas de años anteriores',
+      description: 'Resolveremos problemas de la fase andaluza de años anteriores.',
+      // link: {
+      //   url: "/#subscription",
+      //   description: "Suscríbete para estar informado",
+      //   external: false
+      // },
+      location: "Facultad de Ciencias UGR",
+      important: true
+    },
+    {
+      date: '31 enero 2026',
+      title: 'Sesión de preparación: Problemas de años anteriores',
+      description: 'Resolveremos problemas de la fase andaluza de años anteriores.',
+      // link: {
+      //   url: "/#subscription",
+      //   description: "Suscríbete para estar informado",
+      //   external: false
+      // },
+      location: "Facultad de Ciencias UGR",
+      important: true
     },
     {
       date: '6-8 febrero 2026',
