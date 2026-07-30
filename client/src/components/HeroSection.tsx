@@ -12,7 +12,7 @@ const HeroSection: React.FC = () => {
       height: '70vh'
     }}>
       <div className="text-center text-white px-4 md:px-0">
-        <h1 className="font-heading font-bold text-3xl md:text-5xl mb-2 md:mb-4">¡Prepárate para la Olimpiada de Matemáticas (curso 2025-2026)!</h1>
+        <h1 className="font-heading font-bold text-3xl md:text-5xl mb-2 md:mb-4">¡Prepárate para la Olimpiada de Matemáticas (curso 2026-2027)!</h1>
         <p className="text-lg md:text-xl mb-6">Sesiones semanales de resolución de problemas para fortalecer tus habilidades.</p>
         <p className="text-lg md:text-xl mb-6">Consulta<HashLink 
                 to={'/quien-es#quienes-somos'} 

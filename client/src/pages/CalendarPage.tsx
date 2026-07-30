@@ -59,130 +59,115 @@ const CalendarEvent: React.FC<EventProps> = ({ date, title, description, locatio
 
 const CalendarPage: React.FC = () => {
   // Datos de los eventos
+  const facultadCiencias = "Facultad de Ciencias UGR (ubicación orientativa, puede cambiar ligeramente)";
+
   const events = [
     {
-      date: '4 octubre 2025',
-      title: 'Sesión de preparación: Introducción',
-      description: 'Se resolverán problemas que no requieran conocimientos avanzados.',
-      // link: {
-      //   url: "/#subscription",
-      //   description: "Suscríbete para estar informado",
-      //   external: false
-      // },
-      location: "Facultad de Ciencias UGR",
-      important: false
+      date: '3 octubre 2026',
+      title: 'Sesión de preparación: Introducción I',
+      description: 'Notación y fundamentos: se introducirán las convenciones y bases necesarias para abordar los problemas olímpicos.',
+      location: facultadCiencias,
+      important: true
     },
     {
-      date: '18 octubre 2025',
+      date: '10 octubre 2026',
+      title: 'Sesión de preparación: Introducción II',
+      description: 'Estrategias comunes y técnicas de redacción de soluciones.',
+      location: facultadCiencias,
+      important: true
+    },
+    {
+      date: '17 octubre 2026',
       title: 'Sesión de preparación: Combinatoria',
-      description: 'Se tratarán las técnicas de coloración e invariantes.',
-      // link: {
-      //   url: "/#subscription",
-      //   description: "Suscríbete para estar informado",
-      //   external: false
-      // },
-      location: "Instituto de Matemáticas de la UGR",
-      important: false
+      description: 'Invariantes y coloración.',
+      location: facultadCiencias,
+      important: true
     },
     {
-      date: '25 octubre 2025',
-      title: 'Sesión de preparación: Álgebra',
-      description: 'Los temas a tratar incluyen inducción y ecuaciones funcionales entre otros.',
-      // link: {
-      //   url: "/#subscription",
-      //   description: "Suscríbete para estar informado",
-      //   external: false
-      // },
-      location: "Facultad de Ciencias UGR",
-      important: false
+      date: '24 octubre 2026',
+      title: 'Sesión de preparación: Álgebra I',
+      description: 'Polinomios e inducción.',
+      location: facultadCiencias,
+      important: true
     },
     {
-      date: '15 noviembre 2025',
-      title: 'Sesión de preparación: Resultados útiles',
-      description: 'Se tratarán técnicas variadas como el standard dozen o completar cuadrados.',
-      // link: {
-      //   url: "/#subscription",
-      //   description: "Suscríbete para estar informado",
-      //   external: false
-      // },
-      location: "Instituto de Matemáticas de la UGR",
-      important: false
+      date: '31 octubre 2026',
+      title: 'Sesión de preparación: Geometría I',
+      description: '"Angle chasing".',
+      location: facultadCiencias,
+      important: true
     },
     {
-      date: '22 noviembre 2025',
-      title: 'Sesión de preparación: Geometría',
-      description: 'Trataremos técnicas comunes como angle chasing y teoremas como Ceva y Menelao.',
-      // link: {
-      //   url: "/#subscription",
-      //   description: "Suscríbete para estar informado",
-      //   external: false
-      // },
-      location: "Facultad de Ciencias UGR",
-      important: false
+      date: '7 noviembre 2026',
+      title: 'Sesión de preparación: Teoría de Números I',
+      description: 'Teoremas principales.',
+      location: facultadCiencias,
+      important: true
     },
     {
-      date: '29 noviembre 2025',
-      title: 'Sesión de preparación: Teoría de números',
-      description: 'Veremos el concepto de congruencias y módulos acompañado de resultados relevantes como el teorema de Euler.',
-      // link: {
-      //   url: "/#subscription",
-      //   description: "Suscríbete para estar informado",
-      //   external: false
-      // },
-      location: "Facultad de Ciencias UGR",
-      important: false
+      date: '14 noviembre 2026',
+      title: 'Sesión de preparación: Álgebra II',
+      description: 'Desigualdades.',
+      location: facultadCiencias,
+      important: true
     },
     {
-      date: '10 enero 2026',
+      date: '21 noviembre 2026',
+      title: 'Sesión de preparación: Geometría II',
+      description: 'Geometría computacional.',
+      location: facultadCiencias,
+      important: true
+    },
+    {
+      date: '28 noviembre 2026',
+      title: 'Sesión de preparación: Álgebra III',
+      description: 'Ecuaciones funcionales.',
+      location: facultadCiencias,
+      important: true
+    },
+    {
+      date: '5 diciembre 2026',
+      title: 'Sesión de preparación: Teoría de Números II',
+      description: 'Residuos cuadráticos y "Lifting The Exponent lemma".',
+      location: facultadCiencias,
+      important: true
+    },
+    {
+      date: '12 diciembre 2026',
+      title: 'Sesión de preparación: Resolución de problemas variados',
+      description: 'Resolución de problemas variados combinando los temas vistos hasta el momento.',
+      location: facultadCiencias,
+      important: true
+    },
+    {
+      date: '19 diciembre 2026',
+      title: 'Sesión de preparación: Resolución de problemas variados',
+      description: 'Última sesión de repaso antes del simulacro de la fase local.',
+      location: facultadCiencias,
+      important: true
+    },
+    {
+      date: 'Enero 2027 (fecha tentativa)',
       title: 'Simulacro de la fase local',
       description: 'Examen de práctica.',
-      // link: {
-      //   url: "/#subscription",
-      //   description: "Suscríbete para estar informado",
-      //   external: false
-      // },
-      location: "Facultad de Ciencias UGR",
-      important: false
+      location: facultadCiencias,
+      important: true
     },
     {
-      date: '16 enero 2026',
+      date: 'Enero 2027 (fecha tentativa)',
       title: 'Fase local de la OME',
-      description: 'Se convoca a todos los participantes a las 9:45.',
+      description: 'Se convocará a todos los participantes.',
       link: {
         url: "https://www.rsme.es/olimpiada-matematica-espanola/problemas-propuestos-y-resultados/",
         description: "Ver problemas años anteriores",
         external: true
       },
-      location: 'Aula C-01 de la Facultad de Ciencias de la UGR',
-      important: false,
+      location: facultadCiencias,
+      important: true,
       idx: "local"
     },
     {
-      date: '24 enero 2026',
-      title: 'Sesión de preparación: Problemas de años anteriores',
-      description: 'Resolveremos problemas de la fase andaluza de años anteriores.',
-      // link: {
-      //   url: "/#subscription",
-      //   description: "Suscríbete para estar informado",
-      //   external: false
-      // },
-      location: "Facultad de Ciencias UGR",
-      important: true
-    },
-    {
-      date: '31 enero 2026',
-      title: 'Sesión de preparación: Problemas de años anteriores',
-      description: 'Resolveremos problemas de la fase andaluza de años anteriores.',
-      // link: {
-      //   url: "/#subscription",
-      //   description: "Suscríbete para estar informado",
-      //   external: false
-      // },
-      location: "Facultad de Ciencias UGR",
-      important: true
-    },
-    {
-      date: '6-8 febrero 2026',
+      date: 'Febrero 2027 (fecha tentativa)',
       title: 'Fase regional: Olimpiada Matemática Andaluza',
       description: 'La prueba consta de cuatro problemas a realizar en cuatro horas.',
       link: {
@@ -190,15 +175,15 @@ const CalendarPage: React.FC = () => {
         description: "Ver edición anterior",
         external: true
       },
-      location: 'Jerez (Cádiz)',
+      location: 'Sede por confirmar (Andalucía)',
       important: true,
       idx: "autonomico"
     },
     {
-      date: '12-15 marzo 2026',
+      date: 'Marzo 2027 (fecha tentativa)',
       title: 'Fase nacional de la OME',
       description: 'Al igual que en la fase local se compone de dos exámenes de tres problemas que deberán resolverse en tres horas y media cada uno.',
-      location: 'Las Rozas (Madrid)',
+      location: 'Sede por confirmar',
       link: {
         url: "http://ome2025.uniovi.es/",
         description: "Ver edición anterior",
@@ -211,9 +196,9 @@ const CalendarPage: React.FC = () => {
 
   return (
     <div className="container mx-auto max-w-4xl px-4 py-12">
-      <h1 id="calendario" className="font-heading font-bold text-3xl text-foreground mb-6">Calendario Olimpiada Matemática 2025-2026</h1>
-      
-      <p className="text-muted-foreground mb-8">A continuación, presentamos las fechas más importantes relacionadas con la Olimpiada Matemática para el curso 2025-2026. Las fechas exactas pueden estar sujetas a pequeñas variaciones, que serán comunicadas con antelación.</p>
+      <h1 id="calendario" className="font-heading font-bold text-3xl text-foreground mb-6">Calendario Olimpiada Matemática 2026-2027</h1>
+
+      <p className="text-muted-foreground mb-8">A continuación, presentamos las fechas más importantes relacionadas con la Olimpiada Matemática para el curso 2026-2027. Las fechas exactas pueden estar sujetas a pequeñas variaciones, que serán comunicadas con antelación.</p>
       
       <div className="grid grid-cols-1 gap-y-6 mb-12">
         {events.map((event, index) => (

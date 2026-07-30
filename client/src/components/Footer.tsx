@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-primary-foreground/20 pt-6 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-primary-foreground/90 mb-4 md:mb-0">
-              © 2025 Jose Pérez Cano. Todos los derechos reservados.
+              © 2026 Jose Pérez Cano. Todos los derechos reservados.
             </p>
             {/* <div className="flex space-x-4">
               <a href="#" className="text-primary-foreground/90 hover:text-[#f57c00] transition-colors duration-200 text-sm">Política de privacidad</a>

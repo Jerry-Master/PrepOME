@@ -41,7 +41,7 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-card rounded-lg shadow-md overflow-hidden">
               <div className="bg-primary text-primary-foreground text-center py-3">
-                <span className="font-heading font-bold text-lg">Enero 2026</span>
+                <span className="font-heading font-bold text-lg">Enero 2027*</span>
               </div>
               <div className="p-6">
                 <h3 className="font-heading font-semibold text-xl mb-2">Fase Local</h3>
@@ -52,7 +52,7 @@ const Home: React.FC = () => {
             
             <div className="bg-card rounded-lg shadow-md overflow-hidden">
               <div className="bg-primary text-primary-foreground text-center py-3">
-                <span className="font-heading font-bold text-lg">Febrero 2026</span>
+                <span className="font-heading font-bold text-lg">Febrero 2027*</span>
               </div>
               <div className="p-6">
                 <h3 className="font-heading font-semibold text-xl mb-2">Fase Autonómica</h3>
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
             
             <div className="bg-card rounded-lg shadow-md overflow-hidden">
               <div className="bg-primary text-primary-foreground text-center py-3">
-                <span className="font-heading font-bold text-lg">Marzo - Mayo 2026</span>
+                <span className="font-heading font-bold text-lg">Marzo - Mayo 2027*</span>
               </div>
               <div className="p-6">
                 <h3 className="font-heading font-semibold text-xl mb-2">Fase Nacional</h3>
@@ -72,7 +72,9 @@ const Home: React.FC = () => {
               </div>
             </div>
           </div>
-          
+
+          <p className="text-center text-sm text-muted-foreground mt-4">* Fechas tentativas, pendientes de confirmación oficial.</p>
+
           <div className="text-center mt-10">
             <HashLink to="/calendario" className="bg-primary hover:bg-primary/80 text-primary-foreground font-bold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md">
               Ver calendario completo

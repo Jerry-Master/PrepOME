@@ -27,7 +27,7 @@ const AboutPage: React.FC = () => {
         </p>
 
         <p className="text-muted-foreground mb-4">
-        Motivados por ello, vamos a ofrecer sesiones de preparación para la olimpiada matemática durante el curso 2025-2026. Comenzaremos al principio del curso (septiembre de 2025), y continuaremos hasta la fase nacional de la olimpiada (alrededor de marzo o abril de 2026). Para los seleccionados a nivel nacional, existe una preparación específica de cara a la fase internacional. Puedes encontrar un calendario aproximado<HashLink 
+        Motivados por ello, vamos a ofrecer sesiones de preparación para la olimpiada matemática durante el curso 2026-2027. Comenzaremos al principio del curso (octubre de 2026), y continuaremos hasta la fase nacional de la olimpiada (alrededor de marzo de 2027). Para los seleccionados a nivel nacional, existe una preparación específica de cara a la fase internacional. Puedes encontrar un calendario aproximado<HashLink 
                 to={'/calendario'} 
                 className="no-underline hover:underline inline-flex items-center ml-1"
               >
