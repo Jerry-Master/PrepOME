@@ -25,25 +25,25 @@ const HeroSection: React.FC = () => {
                 to={'/calendario#calendario'} 
                 className="no-underline hover:underline inline-flex items-center ml-1"
               >
-               nuestro calendario.
+               nuestro calendario
                 <ExternalLink size={12} className="ml-1" />
               </HashLink>
-              {/* , y
-              <HashLink 
-                to={'/#subscription'} 
+              , y
+              <HashLink
+                to={'/#subscription'}
                 className="no-underline hover:underline inline-flex items-center ml-1"
               >
                 facilítanos tu e-mail para mantenerte informado.
-                <ExternalLink size={12} className="ml-1" /> 
-              </HashLink> */}
+                <ExternalLink size={12} className="ml-1" />
+              </HashLink>
         </p>
-        {/* <HashLink to="/#subscription">
-          <Button 
+        <HashLink to="/#subscription">
+          <Button
             className="bg-[#f57c00] hover:bg-[#ffad42] text-white font-bold py-3 px-6 rounded-lg shadow-lg"
           >
             Mantente informado
           </Button>
-        </HashLink> */}
+        </HashLink>
       </div>
     </section>
   );

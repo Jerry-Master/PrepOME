@@ -7,7 +7,7 @@ const Home: React.FC = () => {
   return (
     <>
       <HeroSection />
-      {/* <SubscriptionBanner /> */}
+      <SubscriptionBanner />
       
       {/* Content Section */}
       <section className="py-16 px-4">
