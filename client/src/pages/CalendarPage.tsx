@@ -17,9 +17,10 @@ interface EventProps {
   link?: LinkProps;
   important?: boolean;
   idx?: string;
+  speaker?: string;
 }
 
-const CalendarEvent: React.FC<EventProps> = ({ date, title, description, location, link, important = false, idx }) => {
+const CalendarEvent: React.FC<EventProps> = ({ date, title, description, location, link, important = false, idx, speaker }) => {
   return (
     <div id={idx} className={`scroll-mt-20 border-l-4 ${important ? 'border-primary' : 'border-muted'} pl-4 py-4`}>
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
@@ -53,6 +54,11 @@ const CalendarEvent: React.FC<EventProps> = ({ date, title, description, locatio
           <ExternalLink size={12} className="ml-1" />
         </HashLink>
       )}
+      {speaker && (
+        <p className="text-sm text-muted-foreground text-right mt-2">
+          <span className="font-medium">{/\sy\s|,/.test(speaker) ? 'Ponentes:' : 'Ponente:'}</span> {speaker}
+        </p>
+      )}
     </div>
   );
 };
@@ -67,14 +73,16 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Introducción I',
       description: 'Notación y fundamentos: se introducirán las convenciones y bases necesarias para abordar los problemas olímpicos.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Jose y Pablo'
     },
     {
       date: '10 octubre 2026',
       title: 'Sesión de preparación: Introducción II',
       description: 'Estrategias comunes y técnicas de redacción de soluciones.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Antonio'
     },
     {
       date: '17 octubre 2026',
@@ -137,7 +145,8 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Resolución de problemas variados',
       description: 'Resolución de problemas variados combinando los temas vistos hasta el momento.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Víctor'
     },
     {
       date: '19 diciembre 2026',
@@ -211,6 +220,7 @@ const CalendarPage: React.FC = () => {
             link={event.link}
             important={event.important}
             idx={event.idx}
+            speaker={event.speaker}
           />
         ))}
       </div>
