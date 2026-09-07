@@ -17,9 +17,10 @@ interface EventProps {
   link?: LinkProps;
   important?: boolean;
   idx?: string;
+  speaker?: string;
 }
 
-const CalendarEvent: React.FC<EventProps> = ({ date, title, description, location, link, important = false, idx }) => {
+const CalendarEvent: React.FC<EventProps> = ({ date, title, description, location, link, important = false, idx, speaker }) => {
   return (
     <div id={idx} className={`scroll-mt-20 border-l-4 ${important ? 'border-primary' : 'border-muted'} pl-4 py-4`}>
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
@@ -53,6 +54,11 @@ const CalendarEvent: React.FC<EventProps> = ({ date, title, description, locatio
           <ExternalLink size={12} className="ml-1" />
         </HashLink>
       )}
+      {speaker && (
+        <p className="text-sm text-muted-foreground text-right mt-2">
+          <span className="font-medium">{/\sy\s|,/.test(speaker) ? 'Ponentes:' : 'Ponente:'}</span> {speaker}
+        </p>
+      )}
     </div>
   );
 };
@@ -67,14 +73,16 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Introducción I',
       description: 'Notación y fundamentos: se introducirán las convenciones y bases necesarias para abordar los problemas olímpicos.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Jose Pérez Cano y Pablo Morales Álvarez'
     },
     {
       date: '10 octubre 2026',
       title: 'Sesión de preparación: Introducción II',
       description: 'Estrategias comunes y técnicas de redacción de soluciones.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Antonio Fernández Vico'
     },
     {
       date: '17 octubre 2026',
@@ -88,35 +96,40 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Álgebra I',
       description: 'Polinomios e inducción.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Lucas Barroso Molina'
     },
     {
       date: '31 octubre 2026',
       title: 'Sesión de preparación: Geometría I',
       description: '"Angle chasing".',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Nicolás López Funes'
     },
     {
       date: '7 noviembre 2026',
       title: 'Sesión de preparación: Teoría de Números I',
       description: 'Teoremas principales.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Nicolás López Funes'
     },
     {
       date: '14 noviembre 2026',
       title: 'Sesión de preparación: Álgebra II',
       description: 'Desigualdades.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Ivan Valero Terrón'
     },
     {
       date: '21 noviembre 2026',
       title: 'Sesión de preparación: Geometría II',
       description: 'Geometría computacional.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Jose Pérez Cano'
     },
     {
       date: '28 noviembre 2026',
@@ -130,14 +143,16 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Teoría de Números II',
       description: 'Residuos cuadráticos y "Lifting The Exponent lemma".',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Jose Pérez Cano'
     },
     {
       date: '12 diciembre 2026',
       title: 'Sesión de preparación: Resolución de problemas variados',
       description: 'Resolución de problemas variados combinando los temas vistos hasta el momento.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Víctor Manuel Ortiz Sotomayor'
     },
     {
       date: '19 diciembre 2026',
@@ -211,6 +226,7 @@ const CalendarPage: React.FC = () => {
             link={event.link}
             important={event.important}
             idx={event.idx}
+            speaker={event.speaker}
           />
         ))}
       </div>
