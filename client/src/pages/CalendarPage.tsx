@@ -74,7 +74,7 @@ const CalendarPage: React.FC = () => {
       description: 'Notación y fundamentos: se introducirán las convenciones y bases necesarias para abordar los problemas olímpicos.',
       location: facultadCiencias,
       important: true,
-      speaker: 'Jose y Pablo'
+      speaker: 'Jose Pérez Cano y Pablo Morales Álvarez'
     },
     {
       date: '10 octubre 2026',
@@ -82,7 +82,7 @@ const CalendarPage: React.FC = () => {
       description: 'Estrategias comunes y técnicas de redacción de soluciones.',
       location: facultadCiencias,
       important: true,
-      speaker: 'Antonio'
+      speaker: 'Antonio Fernández Vico'
     },
     {
       date: '17 octubre 2026',
@@ -96,35 +96,40 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Álgebra I',
       description: 'Polinomios e inducción.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Lucas Barroso Molina'
     },
     {
       date: '31 octubre 2026',
       title: 'Sesión de preparación: Geometría I',
       description: '"Angle chasing".',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Nicolás López Funes'
     },
     {
       date: '7 noviembre 2026',
       title: 'Sesión de preparación: Teoría de Números I',
       description: 'Teoremas principales.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Nicolás López Funes'
     },
     {
       date: '14 noviembre 2026',
       title: 'Sesión de preparación: Álgebra II',
       description: 'Desigualdades.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Ivan Valero Terrón'
     },
     {
       date: '21 noviembre 2026',
       title: 'Sesión de preparación: Geometría II',
       description: 'Geometría computacional.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Jose Pérez Cano'
     },
     {
       date: '28 noviembre 2026',
@@ -138,7 +143,8 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Teoría de Números II',
       description: 'Residuos cuadráticos y "Lifting The Exponent lemma".',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Jose Pérez Cano'
     },
     {
       date: '12 diciembre 2026',
@@ -146,7 +152,7 @@ const CalendarPage: React.FC = () => {
       description: 'Resolución de problemas variados combinando los temas vistos hasta el momento.',
       location: facultadCiencias,
       important: true,
-      speaker: 'Víctor'
+      speaker: 'Víctor Manuel Ortiz Sotomayor'
     },
     {
       date: '19 diciembre 2026',
