@@ -89,7 +89,8 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Combinatoria',
       description: 'Invariantes y coloración.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Jose Pérez Cano'
     },
     {
       date: '24 octubre 2026',
@@ -136,7 +137,8 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Álgebra III',
       description: 'Ecuaciones funcionales.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Pedro Saavedra Ortiz'
     },
     {
       date: '5 diciembre 2026',
@@ -159,7 +161,8 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Resolución de problemas variados',
       description: 'Última sesión de repaso antes del simulacro de la fase local.',
       location: facultadCiencias,
-      important: true
+      important: true,
+      speaker: 'Jose Pérez Cano'
     },
     {
       date: 'Enero 2027 (fecha tentativa)',
