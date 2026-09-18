@@ -165,14 +165,14 @@ const CalendarPage: React.FC = () => {
       speaker: 'Jose Pérez Cano'
     },
     {
-      date: 'Enero 2027 (fecha tentativa)',
+      date: '9 enero 2027',
       title: 'Simulacro de la fase local',
       description: 'Examen de práctica.',
       location: facultadCiencias,
       important: true
     },
     {
-      date: 'Enero 2027 (fecha tentativa)',
+      date: '15 enero 2027',
       title: 'Fase local de la OME',
       description: 'Se convocará a todos los participantes.',
       link: {
@@ -198,7 +198,7 @@ const CalendarPage: React.FC = () => {
       idx: "autonomico"
     },
     {
-      date: 'Marzo 2027 (fecha tentativa)',
+      date: '11-14 marzo 2027',
       title: 'Fase nacional de la OME',
       description: 'Al igual que en la fase local se compone de dos exámenes de tres problemas que deberán resolverse en tres horas y media cada uno.',
       location: 'Sede por confirmar',
