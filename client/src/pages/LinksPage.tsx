@@ -196,7 +196,7 @@ const LinksPage: React.FC = () => {
       <div className="bg-muted p-6 rounded-lg">
         <h3 className="font-heading font-bold text-lg mb-2">¿Conoces algún otro recurso útil?</h3>
         <p className="text-muted-foreground">
-          Si conoces algún otro sitio web o recurso que pueda ser de interés para la comunidad de las olimpiadas matemáticas, no dudes en compartirlo con nosotros a través del <a href="mailto:pablomorales@ugr.es" className="text-primary hover:underline">correo electrónico</a>. Valoramos tus sugerencias para mejorar esta sección.
+          Si conoces algún otro sitio web o recurso que pueda ser de interés para la comunidad de las olimpiadas matemáticas, no dudes en compartirlo con nosotros a través del <a href="mailto:joseperez2000@hotmail.es" className="text-primary hover:underline">correo electrónico</a>. Valoramos tus sugerencias para mejorar esta sección.
         </p>
       </div>
     </div>

@@ -124,6 +124,12 @@ const MaterialPage: React.FC = () => {
       description: "Un canal de YouTube de preparación de olimpiadas centrado en problemas de geometría.",
       type: "video" as const,
       viewLink: "https://youtube.com/@fungeometry?si=I2_Z13JJjMfL4zMO"
+    },
+    {
+      title: "Dedekind Cuts",
+      description: "Un canal de YouTube de preparación de olimpiadas matemáticas.",
+      type: "video" as const,
+      viewLink: "https://www.youtube.com/@dedekindcuts3589"
     }
   ];
 

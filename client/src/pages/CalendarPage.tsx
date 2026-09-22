@@ -241,7 +241,7 @@ const CalendarPage: React.FC = () => {
           <li>La participación en la Fase Nacional está sujeta a los criterios de selección establecidos por cada comunidad autónoma.</li>
           <li>La selección para la Olimpiada Internacional se realizará entre los finalistas de la Fase Nacional.</li>
         </ul>
-        <p className="text-muted-foreground">Para cualquier duda relacionada con las fechas y ubicaciones, por favor contacta con la organización a través del <a href="mailto:pablomorales@ugr.es" className="text-primary hover:underline">correo electrónico</a> o el formulario de contacto.</p>
+        <p className="text-muted-foreground">Para cualquier duda relacionada con las fechas y ubicaciones, por favor contacta con la organización a través del <a href="mailto:joseperez2000@hotmail.es" className="text-primary hover:underline">correo electrónico</a> o el formulario de contacto.</p>
       </div>
     </div>
   );
