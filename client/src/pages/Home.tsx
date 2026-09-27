@@ -1,14 +1,14 @@
 import React from 'react';
 import HeroSection from '../components/HeroSection';
-import SubscriptionBanner from '../components/SubscriptionBanner';
+// import SubscriptionBanner from '../components/SubscriptionBanner';
 import HashLink from '@/components/HashLink';
 
 const Home: React.FC = () => {
   return (
     <>
       <HeroSection />
-      <SubscriptionBanner />
-      
+      {/* <SubscriptionBanner /> */}
+
       {/* Content Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">

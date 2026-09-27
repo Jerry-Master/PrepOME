@@ -65,14 +65,15 @@ const CalendarEvent: React.FC<EventProps> = ({ date, title, description, locatio
 
 const CalendarPage: React.FC = () => {
   // Datos de los eventos
-  const facultadCiencias = "Facultad de Ciencias UGR (ubicación orientativa, puede cambiar ligeramente)";
+  const facultadCiencias = "Facultad de Ciencias UGR";
+  const imag = "IMAG (Instituto de Matemáticas de la Universidad de Granada)";
 
   const events = [
     {
       date: '3 octubre 2026',
       title: 'Sesión de preparación: Introducción I',
       description: 'Notación y fundamentos: se introducirán las convenciones y bases necesarias para abordar los problemas olímpicos.',
-      location: facultadCiencias,
+      location: imag,
       important: true,
       speaker: 'Jose Pérez Cano y Pablo Morales Álvarez'
     },
@@ -80,7 +81,7 @@ const CalendarPage: React.FC = () => {
       date: '10 octubre 2026',
       title: 'Sesión de preparación: Introducción II',
       description: 'Estrategias comunes y técnicas de redacción de soluciones.',
-      location: facultadCiencias,
+      location: imag,
       important: true,
       speaker: 'Antonio Fernández Vico'
     },
@@ -104,7 +105,7 @@ const CalendarPage: React.FC = () => {
       date: '31 octubre 2026',
       title: 'Sesión de preparación: Geometría I',
       description: '"Angle chasing".',
-      location: facultadCiencias,
+      location: imag,
       important: true,
       speaker: 'Nicolás López Funes'
     },
@@ -128,7 +129,7 @@ const CalendarPage: React.FC = () => {
       date: '21 noviembre 2026',
       title: 'Sesión de preparación: Geometría II',
       description: 'Geometría computacional.',
-      location: facultadCiencias,
+      location: imag,
       important: true,
       speaker: 'Jose Pérez Cano'
     },
@@ -144,7 +145,7 @@ const CalendarPage: React.FC = () => {
       date: '5 diciembre 2026',
       title: 'Sesión de preparación: Teoría de Números II',
       description: 'Residuos cuadráticos y "Lifting The Exponent lemma".',
-      location: facultadCiencias,
+      location: imag,
       important: true,
       speaker: 'Jose Pérez Cano'
     },

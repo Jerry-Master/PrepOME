@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
 import HashLink from './HashLink';
 
@@ -14,36 +14,37 @@ const HeroSection: React.FC = () => {
       <div className="text-center text-white px-4 md:px-0">
         <h1 className="font-heading font-bold text-3xl md:text-5xl mb-2 md:mb-4">¡Prepárate para la Olimpiada de Matemáticas (curso 2026-2027)!</h1>
         <p className="text-lg md:text-xl mb-6">Sesiones semanales de resolución de problemas para fortalecer tus habilidades.</p>
-        <p className="text-lg md:text-xl mb-6">Consulta<HashLink 
-                to={'/quien-es#quienes-somos'} 
+        <p className="text-lg md:text-xl mb-6">Consulta<HashLink
+                to={'/quien-es#quienes-somos'}
                 className="no-underline hover:underline inline-flex items-center ml-1"
               >
                 quiénes somos
                 <ExternalLink size={12} className="ml-1" />
               </HashLink>
-              y <HashLink 
-                to={'/calendario#calendario'} 
+              y <HashLink
+                to={'/calendario#calendario'}
                 className="no-underline hover:underline inline-flex items-center ml-1"
               >
                nuestro calendario
                 <ExternalLink size={12} className="ml-1" />
               </HashLink>
-              , y
+              {/* , y
               <HashLink
                 to={'/#subscription'}
                 className="no-underline hover:underline inline-flex items-center ml-1"
               >
                 facilítanos tu e-mail para mantenerte informado.
                 <ExternalLink size={12} className="ml-1" />
-              </HashLink>
+              </HashLink> */}
+              .
         </p>
-        <HashLink to="/#subscription">
+        {/* <HashLink to="/#subscription">
           <Button
             className="bg-[#f57c00] hover:bg-[#ffad42] text-white font-bold py-3 px-6 rounded-lg shadow-lg"
           >
             Mantente informado
           </Button>
-        </HashLink>
+        </HashLink> */}
       </div>
     </section>
   );
