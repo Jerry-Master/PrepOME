@@ -87,6 +87,13 @@ const MaterialPage: React.FC = () => {
 
   const trainingMaterials = [
     {
+      title: "Sesión 3 octubre 2026: Introducción I",
+      description: "Notación y fundamentos vistos en la primera sesión de preparación.",
+      type: "file" as const,
+      downloadLink: "https://github.com/Jerry-Master/PrepOME/raw/refs/heads/main/Material/Preparacion_Granada_2026_10_03.pdf",
+      viewLink: "https://github.com/Jerry-Master/PrepOME/blob/main/Material/Preparacion_Granada_2026_10_03.pdf"
+    },
+    {
       title: "Euclidean Geometry in Mathematical Olympiads",
       description: "Libro de referencia en el ámbito de problemas de geometría en olimpiadas matemáticas.",
       type: "book" as const,
@@ -130,6 +137,12 @@ const MaterialPage: React.FC = () => {
       description: "Un canal de YouTube de preparación de olimpiadas matemáticas.",
       type: "video" as const,
       viewLink: "https://www.youtube.com/@dedekindcuts3589"
+    },
+    {
+      title: "3Blue1Brown",
+      description: "Canal de divulgación matemática con animaciones que dan intuición visual a conceptos de matemáticas.",
+      type: "video" as const,
+      viewLink: "https://www.youtube.com/@3blue1brown"
     }
   ];
 

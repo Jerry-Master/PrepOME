@@ -74,8 +74,13 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Introducción I',
       description: 'Notación y fundamentos: se introducirán las convenciones y bases necesarias para abordar los problemas olímpicos.',
       location: imag,
-      important: true,
-      speaker: 'Jose Pérez Cano y Pablo Morales Álvarez'
+      important: false,
+      speaker: 'Jose Pérez Cano y Pablo Morales Álvarez',
+      link: {
+        url: 'https://github.com/Jerry-Master/PrepOME/blob/main/Material/Preparacion_Granada_2026_10_03.pdf',
+        description: 'Material de la sesión (PDF)',
+        external: true
+      }
     },
     {
       date: '10 octubre 2026',
