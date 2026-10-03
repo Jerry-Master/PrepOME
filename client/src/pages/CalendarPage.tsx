@@ -77,7 +77,7 @@ const CalendarPage: React.FC = () => {
       important: false,
       speaker: 'Jose Pérez Cano y Pablo Morales Álvarez',
       link: {
-        url: 'https://github.com/Jerry-Master/PrepOME/blob/main/Material/Preparacion_Granada_2026_10_03.pdf',
+        url: 'material/Preparacion_Granada_2026_10_03.pdf',
         description: 'Material de la sesión (PDF)',
         external: true
       }

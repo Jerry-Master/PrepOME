@@ -90,8 +90,8 @@ const MaterialPage: React.FC = () => {
       title: "Sesión 3 octubre 2026: Introducción I",
       description: "Notación y fundamentos vistos en la primera sesión de preparación.",
       type: "file" as const,
-      downloadLink: "https://github.com/Jerry-Master/PrepOME/raw/refs/heads/main/Material/Preparacion_Granada_2026_10_03.pdf",
-      viewLink: "https://github.com/Jerry-Master/PrepOME/blob/main/Material/Preparacion_Granada_2026_10_03.pdf"
+      downloadLink: "material/Preparacion_Granada_2026_10_03.pdf",
+      viewLink: "material/Preparacion_Granada_2026_10_03.pdf"
     },
     {
       title: "Euclidean Geometry in Mathematical Olympiads",
