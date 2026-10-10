@@ -14,6 +14,7 @@ import WhoPage from "@/pages/WhoPage";
 import CalendarPage from "@/pages/CalendarPage";
 import MaterialPage from "@/pages/MaterialPage";
 import LinksPage from "@/pages/LinksPage";
+import RedactarSolucionPage from "@/pages/RedactarSolucionPage";
 import NotFound from "@/pages/not-found";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -28,7 +29,8 @@ function AppRoutes() {
     "/quien-es",
     "/calendario",
     "/material",
-    "/enlaces"
+    "/enlaces",
+    "/redactar-solucion"
   ];
 
   const isNotFound = !knownRoutes.includes(pathname);
@@ -54,6 +56,7 @@ function AppRoutes() {
           <Route path="/calendario" element={<CalendarPage />} />
           <Route path="/material" element={<MaterialPage />} />
           <Route path="/enlaces" element={<LinksPage />} />
+          <Route path="/redactar-solucion" element={<RedactarSolucionPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

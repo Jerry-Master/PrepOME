@@ -14,13 +14,13 @@ interface EventProps {
   title: string;
   description: string;
   location?: string;
-  link?: LinkProps;
+  links?: LinkProps[];
   important?: boolean;
   idx?: string;
   speaker?: string;
 }
 
-const CalendarEvent: React.FC<EventProps> = ({ date, title, description, location, link, important = false, idx, speaker }) => {
+const CalendarEvent: React.FC<EventProps> = ({ date, title, description, location, links, important = false, idx, speaker }) => {
   return (
     <div id={idx} className={`scroll-mt-20 border-l-4 ${important ? 'border-primary' : 'border-muted'} pl-4 py-4`}>
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
@@ -35,25 +35,25 @@ const CalendarEvent: React.FC<EventProps> = ({ date, title, description, locatio
           <span className="font-medium">Ubicación:</span> {location}
         </p>
       )}
-      {link && link.external && (
+      {links && links.map((link, i) => link.external ? (
         <a
+          key={i}
           href={link.url} target="_blank"
-          rel="noopener noreferrer" 
+          rel="noopener noreferrer"
           className="text-sm text-primary hover:underline flex items-center"
         >
           {link.description}
           <ExternalLink size={12} className="ml-1" />
         </a>
-      )}
-      {link && !link.external && (
+      ) : (
         <HashLink
-          to={link.url} 
+          key={i}
+          to={link.url}
           className="text-sm text-primary hover:underline flex items-center"
         >
           {link.description}
-          <ExternalLink size={12} className="ml-1" />
         </HashLink>
-      )}
+      ))}
       {speaker && (
         <p className="text-sm text-muted-foreground text-right mt-2">
           <span className="font-medium">{/\sy\s|,/.test(speaker) ? 'Ponentes:' : 'Ponente:'}</span> {speaker}
@@ -76,19 +76,36 @@ const CalendarPage: React.FC = () => {
       location: imag,
       important: false,
       speaker: 'Jose Pérez Cano y Pablo Morales Álvarez',
-      link: {
+      links: [{
         url: 'material/Preparacion_Granada_2026_10_03.pdf',
         description: 'Material de la sesión (PDF)',
         external: true
-      }
+      }]
     },
     {
       date: '10 octubre 2026',
       title: 'Sesión de preparación: Introducción II',
       description: 'Estrategias comunes y técnicas de redacción de soluciones.',
       location: imag,
-      important: true,
-      speaker: 'Antonio Fernández Vico'
+      important: false,
+      speaker: 'Antonio Fernández Vico',
+      links: [
+        {
+          url: 'material/Preparacion_Granada_2026_10_10.pdf',
+          description: 'Problemas de la sesión (PDF)',
+          external: true
+        },
+        {
+          url: 'material/Presentacion_2026_10_10.pdf',
+          description: 'Presentación con los problemas resueltos (PDF)',
+          external: true
+        },
+        {
+          url: '/redactar-solucion',
+          description: 'Cómo redactar una solución (artículo traducido)',
+          external: false
+        }
+      ]
     },
     {
       date: '17 octubre 2026',
@@ -181,11 +198,11 @@ const CalendarPage: React.FC = () => {
       date: '15 enero 2027',
       title: 'Fase local de la OME',
       description: 'Se convocará a todos los participantes.',
-      link: {
+      links: [{
         url: "https://www.rsme.es/olimpiada-matematica-espanola/problemas-propuestos-y-resultados/",
         description: "Ver problemas años anteriores",
         external: true
-      },
+      }],
       location: facultadCiencias,
       important: true,
       idx: "local"
@@ -194,11 +211,11 @@ const CalendarPage: React.FC = () => {
       date: 'Febrero 2027 (fecha tentativa)',
       title: 'Fase regional: Olimpiada Matemática Andaluza',
       description: 'La prueba consta de cuatro problemas a realizar en cuatro horas.',
-      link: {
+      links: [{
         url: "https://web.ujaen.es/eventos/omatematica/oma/",
         description: "Ver edición anterior",
         external: true
-      },
+      }],
       location: 'Sede por confirmar (Andalucía)',
       important: true,
       idx: "autonomico"
@@ -208,11 +225,11 @@ const CalendarPage: React.FC = () => {
       title: 'Fase nacional de la OME',
       description: 'Al igual que en la fase local se compone de dos exámenes de tres problemas que deberán resolverse en tres horas y media cada uno.',
       location: 'Sede por confirmar',
-      link: {
+      links: [{
         url: "http://ome2025.uniovi.es/",
         description: "Ver edición anterior",
         external: true
-      },
+      }],
       important: true,
       idx: "nacional"
     }
@@ -232,7 +249,7 @@ const CalendarPage: React.FC = () => {
             title={event.title}
             description={event.description}
             location={event.location}
-            link={event.link}
+            links={event.links}
             important={event.important}
             idx={event.idx}
             speaker={event.speaker}

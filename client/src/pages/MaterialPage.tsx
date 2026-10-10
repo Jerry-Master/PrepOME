@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Book, FileText, Video, Download } from 'lucide-react';
+import HashLink from '@/components/HashLink';
 
 interface MaterialItemProps {
   title: string;
@@ -8,9 +9,10 @@ interface MaterialItemProps {
   type: 'book' | 'file' | 'video';
   downloadLink?: string;
   viewLink?: string;
+  internal?: boolean;
 }
 
-const MaterialItem: React.FC<MaterialItemProps> = ({ title, description, type, downloadLink, viewLink }) => {
+const MaterialItem: React.FC<MaterialItemProps> = ({ title, description, type, downloadLink, viewLink, internal = false }) => {
   // Función para obtener el icono según el tipo de material
   const getIcon = () => {
     switch (type) {
@@ -40,11 +42,19 @@ const MaterialItem: React.FC<MaterialItemProps> = ({ title, description, type, d
             </a>
           )}
           {viewLink && (
-            <a href={viewLink} target="_blank" rel="noopener noreferrer">
-              <Button size="sm" variant="secondary" className="text-xs">
-                Ver material
-              </Button>
-            </a>
+            internal ? (
+              <HashLink to={viewLink}>
+                <Button size="sm" variant="secondary" className="text-xs">
+                  Ver material
+                </Button>
+              </HashLink>
+            ) : (
+              <a href={viewLink} target="_blank" rel="noopener noreferrer">
+                <Button size="sm" variant="secondary" className="text-xs">
+                  Ver material
+                </Button>
+              </a>
+            )
           )}
         </div>
       </div>
@@ -85,7 +95,33 @@ const MaterialPage: React.FC = () => {
     }
   ];
 
-  const trainingMaterials = [
+  const trainingMaterials: Array<{
+    title: string;
+    description: string;
+    type: 'book' | 'file' | 'video';
+    downloadLink?: string;
+    viewLink?: string;
+    internal?: boolean;
+  }> = [
+    {
+      title: "Sesión 10 octubre 2026: Introducción II",
+      description: "Problemas de la sesión de estrategias comunes y técnicas de redacción de soluciones.",
+      type: "file" as const,
+      viewLink: "material/Preparacion_Granada_2026_10_10.pdf"
+    },
+    {
+      title: "Sesión 10 octubre 2026: Presentación de problemas resueltos",
+      description: "Presentación con la resolución de los problemas 1–7 de la sesión (aritmética, sucesiones, sumatorios, geometría y productos infinitos).",
+      type: "file" as const,
+      viewLink: "material/Presentacion_2026_10_10.pdf"
+    },
+    {
+      title: "Cómo redactar una solución",
+      description: "Traducción al español del artículo de Art of Problem Solving sobre cómo escribir soluciones claras.",
+      type: "file" as const,
+      viewLink: "/redactar-solucion",
+      internal: true
+    },
     {
       title: "Sesión 3 octubre 2026: Introducción I",
       description: "Notación y fundamentos vistos en la primera sesión de preparación.",
@@ -183,6 +219,7 @@ const MaterialPage: React.FC = () => {
               type={item.type}
               // downloadLink={item.downloadLink}
               viewLink={item.viewLink}
+              internal={item.internal}
             />
           ))}
         </div>
