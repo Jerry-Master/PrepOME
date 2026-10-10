@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
+import { Check, ExternalLink, X } from 'lucide-react';
 import HashLink from '@/components/HashLink';
 import MathText from '@/components/MathText';
 
@@ -27,21 +27,47 @@ const Problem: React.FC<{ children: string }> = ({ children }) => (
 
 const Solution: React.FC<{ kind: 'bad' | 'good'; title?: string; children: React.ReactNode }> = ({ kind, title, children }) => {
   const bad = kind === 'bad';
+  const Icon = bad ? X : Check;
   return (
-    <div className="mb-6">
-      <p className="font-bold mb-2 text-foreground">
-        {title ?? (bad ? 'Cómo no escribir la solución:' : 'Cómo escribir la solución:')}
-      </p>
-      <div className={`border-l-4 rounded-r-lg p-4 ${bad ? 'border-red-400 bg-red-50' : 'border-green-500 bg-green-50'} [&>p:last-child]:mb-0`}>
-        {children}
+    <div className="relative mt-8 mb-8">
+      {/* Etiqueta tipo pestaña de carpeta */}
+      <span
+        className={`absolute -top-4 left-5 z-10 inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-md ${
+          bad ? 'bg-red-600 -rotate-1' : 'bg-green-700 rotate-1'
+        }`}
+      >
+        <Icon className="h-4 w-4" strokeWidth={3} aria-hidden />
+        {title ?? (bad ? 'Cómo no escribir la solución' : 'Cómo escribir la solución')}
+      </span>
+      {/* Hoja: la mala va tachada con borde discontinuo; la buena, con borde sólido y sombra */}
+      <div
+        className={`relative overflow-hidden rounded-2xl px-5 pb-5 pt-9 text-slate-800 [&>*:last-child]:mb-0 [&>div:last-child>*:last-child]:mb-0 ${
+          bad
+            ? 'border-2 border-dashed border-red-300 bg-red-50'
+            : 'border-2 border-green-400 bg-green-50 shadow-[6px_6px_0_0_rgba(34,197,94,0.25)]'
+        }`}
+      >
+        <Icon
+          aria-hidden
+          strokeWidth={3}
+          className={`pointer-events-none absolute -right-4 -top-4 h-40 w-40 select-none ${
+            bad ? 'text-red-500 opacity-10' : 'text-green-600 opacity-10'
+          }`}
+        />
+        <div className="relative [&>*:last-child]:mb-0 [&>div:last-child>*:last-child]:mb-0">{children}</div>
       </div>
     </div>
   );
 };
 
 const Figure: React.FC<{ src: string; alt: string }> = ({ src, alt }) => (
-  <figure className="flex justify-center mb-4">
-    <img src={`${IMG}${src}`} alt={alt} loading="lazy" className="max-w-full h-auto border bg-white" />
+  <figure className="flex justify-center mb-5">
+    <img
+      src={`${IMG}${src}`}
+      alt={alt}
+      loading="lazy"
+      className="max-w-full h-auto rounded-lg border border-slate-200 bg-white p-2 shadow-sm"
+    />
   </figure>
 );
 
@@ -248,13 +274,15 @@ $$S(S(S(4444^{4444}))).$$
 A continuación hay dos soluciones. Ninguna es perfecta en su presentación; cuando se trabaja con presión de tiempo, es difícil escribir demostraciones con un aspecto impecable. Seguramente encontrarás la segunda mucho más agradable de leer. Cuando escribas soluciones, ten presentes los consejos anteriores y recuerda: “Si no se puede leer, no está bien”.
 `}</Prose>
 
-        <p className="font-bold mb-2 text-foreground">Cómo no escribir la solución:</p>
-        <Figure src="bad1.gif" alt="Primera página de una solución manuscrita desordenada (en inglés)" />
-        <Figure src="bad2.gif" alt="Segunda página de una solución manuscrita desordenada (en inglés)" />
+        <Solution kind="bad">
+          <Figure src="bad1.gif" alt="Primera página de una solución manuscrita desordenada (en inglés)" />
+          <Figure src="bad2.gif" alt="Segunda página de una solución manuscrita desordenada (en inglés)" />
+        </Solution>
         <Prose>{t`Esa solución es un desastre. La de abajo me llevó el mismo tiempo escribirla y es mucho más fácil de leer.`}</Prose>
-        <p className="font-bold mb-2 text-foreground">Cómo escribir la solución:</p>
-        <Figure src="good1.gif" alt="Primera página de una solución manuscrita ordenada (en inglés)" />
-        <Figure src="good2.gif" alt="Segunda página de una solución manuscrita ordenada (en inglés)" />
+        <Solution kind="good">
+          <Figure src="good1.gif" alt="Primera página de una solución manuscrita ordenada (en inglés)" />
+          <Figure src="good2.gif" alt="Segunda página de una solución manuscrita ordenada (en inglés)" />
+        </Solution>
       </Section>
 
       {/* ---------------- Usa el espacio ---------------- */}
@@ -518,9 +546,8 @@ como queríamos. Como \(A\), \(B\) y \(C\) son independientes de \(D\), concluim
         <Credit>(Método de solución encontrado por el miembro de la comunidad **3cnfsat** en la clase de Geometría Olímpica.)</Credit>
 
         <Prose>{t`Esta es una solución que incluye el diagrama:`}</Prose>
-        <p className="font-bold mb-2 text-foreground">Cómo escribir la solución:</p>
-        <Figure src="geompic2.gif" alt="Triángulo ABC con el punto D en BC, las dos circunferencias inscritas y su tangente común" />
-        <Solution kind="good" title=" ">
+        <Solution kind="good">
+          <Figure src="geompic2.gif" alt="Triángulo ABC con el punto D en BC, las dos circunferencias inscritas y su tangente común" />
           <MathText>{t`
 Sean \(O\) y \(O'\) nuestras circunferencias. Sean \(M\) y \(M'\) puntos de \(O\) y \(O'\) tales que \(MM'\) es la tangente común que pasa por \(K\). Sean \(L\) y \(L'\) los puntos donde \(AD\) corta a las circunferencias \(O\) y \(O'\), respectivamente. Sean \(N\) y \(N'\) los puntos donde \(BC\) corta a las circunferencias \(O\) y \(O'\), respectivamente. Demostraremos que \(AK = \) \({(AB + AC - BC)}/2\) y, por tanto, que la longitud de \(AK\) es independiente de \(D\). Como las tangentes desde un punto a una circunferencia son iguales, tenemos tanto \(DN = DL\) como \(DN' = DL'\). Por tanto,
 
@@ -588,11 +615,11 @@ $$(m^2 + 1)(n^2 + 1) + 2(m - n)(1 - mn) = 4(mn + 1).$$
 (Problema de **Titu Andreescu**.)
 `}</Problem>
         <Prose>{t`Esto es totalmente inaceptable:`}</Prose>
-        <Solution kind="bad" title="Cómo no escribir la solución 1:">
+        <Solution kind="bad" title="Cómo no escribir la solución 1">
           <MathText>{t`$$(1, 2), (-3, 0), (0, 3), (-2, -1), (1, 0), (-3, 2), (0, -1), (-2, 3)$$`}</MathText>
         </Solution>
         <Prose>{t`Lo anterior es una respuesta, no una solución. Esta “solución” carece de cualquier prueba de que estas soluciones realmente funcionan, y no demuestra que no haya otras soluciones. Además, no acerca al lector a entender la solución.`}</Prose>
-        <Solution kind="bad" title="Cómo no escribir la solución 2:">
+        <Solution kind="bad" title="Cómo no escribir la solución 2">
           <MathText>{t`La ecuación dada se reordena como $$(m + 1)(n - 1) = \pm 2,$$ así que las soluciones son \[(1, 2), (-3, 0), (0, 3), (-2, -1), (1, 0), (-3, 2), (0, -1), (-2, 3).\]`}</MathText>
         </Solution>
         <Prose>{t`Esta solución es mejor que la primera; un lector motivado al menos entrevé un camino hacia la solución, pero no está nada claro cómo la ecuación original se reordena en la ecuación dada, ni cómo se siguen las soluciones mostradas.`}</Prose>
@@ -679,9 +706,8 @@ Este es un problema de ejemplo con soluciones que emplean lemas. Hemos exagerado
         <Problem>{t`
 **Problema:** Desde el vértice \(A\) del triángulo \(ABC\) se trazan las perpendiculares \(AM\) y \(AN\) a las bisectrices de los ángulos exteriores del triángulo en \(B\) y en \(C\). Demuestra que \(MN\) es igual a la mitad del perímetro de \(ABC\).
 `}</Problem>
-        <p className="font-bold mb-2 text-foreground">Cómo no escribir la solución:</p>
-        <Figure src="fangeom3.gif" alt="Triángulo ABC con las bisectrices exteriores en B y C, los puntos M y N, y la recta MN" />
-        <Solution kind="bad" title=" ">
+        <Solution kind="bad">
+          <Figure src="fangeom3.gif" alt="Triángulo ABC con las bisectrices exteriores en B y C, los puntos M y N, y la recta MN" />
           <MathText>{t`
 Sea \(J\) el punto en que la recta paralela a \(BC\) por \(A\) corta a la recta \(BM\). Sea \(K\) el punto en que la recta paralela a \(AB\) por \(J\) corta a la recta \(BC\). Sean \(X\) e \(Y\) los puntos en que \(MN\) corta a \(AB\) y a \(AC\), respectivamente. Como \(JK \parallel AB\) y \(AJ \parallel BK\), \(JKBA\) es un paralelogramo. Como
 
@@ -700,9 +726,8 @@ como queríamos.
         </Solution>
         <Credit>(Método de solución encontrado por el miembro de la comunidad **fanzha** en la clase de Geometría Olímpica.)</Credit>
 
-        <p className="font-bold mb-2 text-foreground">Cómo escribir la solución:</p>
-        <Figure src="fangeom3.gif" alt="Triángulo ABC con las bisectrices exteriores en B y C, los puntos M y N, y la recta MN" />
-        <Solution kind="good" title=" ">
+        <Solution kind="good">
+          <Figure src="fangeom3.gif" alt="Triángulo ABC con las bisectrices exteriores en B y C, los puntos M y N, y la recta MN" />
           <MathText>{t`
 Sea \(J\) el punto en que la recta paralela a \(BC\) por \(A\) corta a la recta \(BM\). Sea \(K\) el punto en que la recta paralela a \(AB\) por \(J\) corta a la recta \(BC\). Sean \(X\) e \(Y\) los puntos en que \(MN\) corta a \(AB\) y a \(AC\), respectivamente.
 
@@ -894,9 +919,8 @@ Del triángulo \(AIC\) tenemos \(\angle AIC = 180^\circ - \angle ACI - \angle CA
         </Solution>
         <Prose>{t`Corta, fea y completamente incomprensible.`}</Prose>
 
-        <p className="font-bold mb-2 text-foreground">Cómo escribir la solución:</p>
-        <Figure src="xyz1.gif" alt="Triángulo ABC con incentro I, bisectrices exteriores en A y B que se cortan en E" />
-        <Solution kind="good" title=" ">
+        <Solution kind="good">
+          <Figure src="xyz1.gif" alt="Triángulo ABC con incentro I, bisectrices exteriores en A y B que se cortan en E" />
           <MathText>{t`
 Sean
 
@@ -982,10 +1006,9 @@ Por tanto, uno de los factores de este producto es igual a \(0\).
 
 **Caso 1:** \(b - a = 0.\)
 `}</MathText>
-        </Solution>
 
-        <Figure src="xyz2.gif" alt="Triángulo isósceles ABC con a = b, incentro I y pie D de la bisectriz desde C" />
-        <Solution kind="good" title=" ">
+          <Figure src="xyz2.gif" alt="Triángulo isósceles ABC con a = b, incentro I y pie D de la bisectriz desde C" />
+
           <MathText>{t`
 Si \(b = a\), entonces \(ABC\) es isósceles y \(\alpha = \beta.\) Por tanto, la prolongación de la bisectriz \(CI\) es perpendicular a \(AB\) en el punto \(D\), como se muestra. Como \(I\) es el incentro de \(ABC\) e \(ID \perp AB\), tenemos \(ID = r\), ya que \(ID\) es un inradio de \(ABC\). Además,
 
@@ -1045,10 +1068,9 @@ Por tanto, el lema queda demostrado. \(\spadesuit\)
 
 **Demostración:**
 `}</MathText>
-        </Solution>
 
-        <Figure src="xyz3.gif" alt="Triángulo ABC con el incentro I y la perpendicular IF a BC" />
-        <Solution kind="good" title=" ">
+          <Figure src="xyz3.gif" alt="Triángulo ABC con el incentro I y la perpendicular IF a BC" />
+
           <MathText>{t`
 Trazamos la altura \(IF\) perpendicular a \(BC\), como se muestra. Usamos las siguientes relaciones conocidas del triángulo:
 
