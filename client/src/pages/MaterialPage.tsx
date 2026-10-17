@@ -104,6 +104,12 @@ const MaterialPage: React.FC = () => {
     internal?: boolean;
   }> = [
     {
+      title: "Sesión 17 octubre 2026: Combinatoria",
+      description: "Problemas de invariantes y coloración.",
+      type: "file" as const,
+      viewLink: "material/Preparacion_Granada_2026_10_17.pdf"
+    },
+    {
       title: "Sesión 10 octubre 2026: Introducción II",
       description: "Problemas de la sesión de estrategias comunes y técnicas de redacción de soluciones.",
       type: "file" as const,

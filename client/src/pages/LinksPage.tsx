@@ -111,6 +111,18 @@ const LinksPage: React.FC = () => {
       description: "Campamento de verano de matemáticas en Reino Unido.",
       url: "https://promys.org/",
       category: "camps"
+    },
+    {
+      title: "Preparación Olimpiada Informática Española",
+      description: "Recursos oficiales de la Olimpiada Informática Española para preparar la competición.",
+      url: "https://2025.olimpiada-informatica.org/preparacion.html",
+      category: "informatics"
+    },
+    {
+      title: "Formación OIE",
+      description: "Plataforma de formación de la Olimpiada Informática con cursos y problemas de programación competitiva.",
+      url: "https://formacion.olimpiada-informatica.org/",
+      category: "informatics"
     }
   ];
 
@@ -119,6 +131,7 @@ const LinksPage: React.FC = () => {
   const internationalLinks = links.filter(link => link.category === 'international');
   const resourceLinks = links.filter(link => link.category === 'resources');
   const campsLinks = links.filter(link => link.category === 'camps');
+  const informaticsLinks = links.filter(link => link.category === 'informatics');
 
   return (
     <div className="container mx-auto max-w-4xl px-4 py-12">
@@ -191,7 +204,23 @@ const LinksPage: React.FC = () => {
           ))}
         </div>
       </section>
-      
+
+      {/* Olimpiada Informática */}
+      <section className="mb-10">
+        <h2 className="font-heading font-bold text-2xl text-foreground mb-4">Olimpiada Informática</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {informaticsLinks.map((link, index) => (
+            <LinkItem
+              key={index}
+              title={link.title}
+              description={link.description}
+              url={link.url}
+              category={link.category}
+            />
+          ))}
+        </div>
+      </section>
+
       {/* Nota informativa */}
       <div className="bg-muted p-6 rounded-lg">
         <h3 className="font-heading font-bold text-lg mb-2">¿Conoces algún otro recurso útil?</h3>

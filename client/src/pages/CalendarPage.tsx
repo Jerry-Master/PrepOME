@@ -112,8 +112,13 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Combinatoria',
       description: 'Invariantes y coloración.',
       location: facultadCiencias,
-      important: true,
-      speaker: 'Jose Pérez Cano'
+      important: false,
+      speaker: 'Jose Pérez Cano',
+      links: [{
+        url: 'material/Preparacion_Granada_2026_10_17.pdf',
+        description: 'Problemas de la sesión (PDF)',
+        external: true
+      }]
     },
     {
       date: '24 octubre 2026',
