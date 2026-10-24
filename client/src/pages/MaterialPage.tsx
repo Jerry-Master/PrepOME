@@ -104,6 +104,12 @@ const MaterialPage: React.FC = () => {
     internal?: boolean;
   }> = [
     {
+      title: "Sesión 24 octubre 2026: Álgebra I",
+      description: "Problemas de polinomios e inducción.",
+      type: "file" as const,
+      viewLink: "material/Preparacion_Granada_2026_10_24.pdf"
+    },
+    {
       title: "Sesión 17 octubre 2026: Combinatoria",
       description: "Problemas de invariantes y coloración.",
       type: "file" as const,

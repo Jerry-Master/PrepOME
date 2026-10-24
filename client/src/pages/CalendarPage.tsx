@@ -125,8 +125,13 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Álgebra I',
       description: 'Polinomios e inducción.',
       location: facultadCiencias,
-      important: true,
-      speaker: 'Lucas Barroso Molina'
+      important: false,
+      speaker: 'Lucas Barroso Molina',
+      links: [{
+        url: 'material/Preparacion_Granada_2026_10_24.pdf',
+        description: 'Problemas de la sesión (PDF)',
+        external: true
+      }]
     },
     {
       date: '31 octubre 2026',
