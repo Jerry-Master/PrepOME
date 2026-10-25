@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Book, FileText, Video, Download } from 'lucide-react';
 import HashLink from '@/components/HashLink';
+import MaterialFolders, { MaterialFolder } from '@/components/MaterialFolders';
 
 interface MaterialItemProps {
   title: string;
@@ -10,9 +11,10 @@ interface MaterialItemProps {
   downloadLink?: string;
   viewLink?: string;
   internal?: boolean;
+  solutionsLink?: string;
 }
 
-const MaterialItem: React.FC<MaterialItemProps> = ({ title, description, type, downloadLink, viewLink, internal = false }) => {
+const MaterialItem: React.FC<MaterialItemProps> = ({ title, description, type, downloadLink, viewLink, internal = false, solutionsLink }) => {
   // Función para obtener el icono según el tipo de material
   const getIcon = () => {
     switch (type) {
@@ -56,11 +58,20 @@ const MaterialItem: React.FC<MaterialItemProps> = ({ title, description, type, d
               </a>
             )
           )}
+          {solutionsLink && (
+            <a href={solutionsLink} target="_blank" rel="noopener noreferrer">
+              <Button size="sm" variant="outline" className="text-xs">
+                Soluciones
+              </Button>
+            </a>
+          )}
         </div>
       </div>
     </div>
   );
 };
+
+type TrainingItem = Omit<MaterialItemProps, 'type'> & { type: 'book' | 'file' | 'video' };
 
 const MaterialPage: React.FC = () => {
   // Datos de los materiales por categoría
@@ -95,14 +106,8 @@ const MaterialPage: React.FC = () => {
     }
   ];
 
-  const trainingMaterials: Array<{
-    title: string;
-    description: string;
-    type: 'book' | 'file' | 'video';
-    downloadLink?: string;
-    viewLink?: string;
-    internal?: boolean;
-  }> = [
+  // Cada carpeta agrupa materiales. Las carpetas vacías no se muestran.
+  const sessions2026: TrainingItem[] = [
     {
       title: "Sesión 24 octubre 2026: Álgebra I",
       description: "Problemas de polinomios e inducción.",
@@ -123,7 +128,7 @@ const MaterialPage: React.FC = () => {
     },
     {
       title: "Sesión 10 octubre 2026: Presentación de problemas resueltos",
-      description: "Presentación con la resolución de los problemas 1–7 de la sesión (aritmética, sucesiones, sumatorios, geometría y productos infinitos).",
+      description: "Resolución de los problemas 1–7 de la sesión (aritmética, sucesiones, sumatorios, geometría y productos infinitos).",
       type: "file" as const,
       viewLink: "material/Presentacion_2026_10_10.pdf"
     },
@@ -138,18 +143,103 @@ const MaterialPage: React.FC = () => {
       title: "Sesión 3 octubre 2026: Introducción I",
       description: "Notación y fundamentos vistos en la primera sesión de preparación.",
       type: "file" as const,
-      downloadLink: "material/Preparacion_Granada_2026_10_03.pdf",
       viewLink: "material/Preparacion_Granada_2026_10_03.pdf"
+    }
+  ];
+
+  // Material del curso pasado: añade aquí las sesiones (PDFs en client/public/material/)
+  // Material del curso pasado (PDFs en client/public/material/2025/)
+  const sessions2025: TrainingItem[] = [
+    {
+      title: "Sesión 29 noviembre 2025: Teoría de Números",
+      description: "Divisibilidad, congruencias, ecuaciones diofánticas y el teorema de Wilson.",
+      type: "file" as const,
+      viewLink: "material/2025/Preparacion_Granada_2025_11_29.pdf"
     },
     {
+      title: "Sesión 22 noviembre 2025: Geometría",
+      description: "Ángulos, cuadriláteros cíclicos y colinealidades de olimpiadas internacionales.",
+      type: "file" as const,
+      viewLink: "material/2025/Preparacion_Granada_2025_11_22.pdf"
+    },
+    {
+      title: "Ecuaciones funcionales",
+      description: "Enunciados de problemas de ecuaciones funcionales.",
+      type: "file" as const,
+      viewLink: "material/2025/Ecuaciones_Funcionales_Enunciados.pdf"
+    },
+    {
+      title: "Sesión 15 noviembre 2025: Resultados útiles",
+      description: "Desigualdades clásicas aplicadas a problemas de OME e IMO.",
+      type: "file" as const,
+      viewLink: "material/2025/Preparacion_Granada_2025_11_15.pdf"
+    },
+    {
+      title: "Sesión 18 octubre 2025: Combinatoria",
+      description: "Coloraciones e invariantes.",
+      type: "file" as const,
+      viewLink: "material/2025/Preparacion_Granada_2025_10_18.pdf"
+    },
+    {
+      title: "Sesión 4 octubre 2025: Resolución de problemas",
+      description: "Problemas variados de aritmética, álgebra, geometría y ecuaciones funcionales.",
+      type: "file" as const,
+      viewLink: "material/2025/Preparacion_Granada_2025_10_04.pdf"
+    },
+    {
+      title: "Conjunto de problemas 6",
+      description: "Hoja de problemas para practicar en casa, con soluciones.",
+      type: "file" as const,
+      viewLink: "material/2025/Set6_Preparacion_UGR.pdf",
+      solutionsLink: "material/2025/Set6_Preparacion_UGR_Soluciones.pdf"
+    },
+    {
+      title: "Conjunto de problemas 5",
+      description: "Hoja de problemas para practicar en casa, con soluciones.",
+      type: "file" as const,
+      viewLink: "material/2025/Set5_Preparacion_UGR.pdf",
+      solutionsLink: "material/2025/Set5_Preparacion_UGR_Soluciones.pdf"
+    },
+    {
+      title: "Conjunto de problemas 4",
+      description: "Hoja de problemas para practicar en casa, con soluciones.",
+      type: "file" as const,
+      viewLink: "material/2025/Set4_Preparacion_UGR.pdf",
+      solutionsLink: "material/2025/Set4_Preparacion_UGR_Soluciones.pdf"
+    },
+    {
+      title: "Problem Set 3",
+      description: "Hoja de problemas (en inglés) para practicar en casa, con soluciones.",
+      type: "file" as const,
+      viewLink: "material/2025/Set3_Preparacion_UGR.pdf",
+      solutionsLink: "material/2025/Set3_Preparacion_UGR_Soluciones.pdf"
+    },
+    {
+      title: "Problem Set 2",
+      description: "Hoja de problemas (en inglés) para practicar en casa, con soluciones.",
+      type: "file" as const,
+      viewLink: "material/2025/Set2_Preparacion_UGR.pdf",
+      solutionsLink: "material/2025/Set2_Preparacion_UGR_Soluciones.pdf"
+    },
+    {
+      title: "Problem Set 1",
+      description: "Hoja de problemas (en inglés) para practicar en casa, con soluciones.",
+      type: "file" as const,
+      viewLink: "material/2025/Set1_Preparacion_UGR.pdf",
+      solutionsLink: "material/2025/Set1_Preparacion_UGR_Soluciones.pdf"
+    }
+  ];
+
+  const books: TrainingItem[] = [
+    {
       title: "Euclidean Geometry in Mathematical Olympiads",
-      description: "Libro de referencia en el ámbito de problemas de geometría en olimpiadas matemáticas.",
+      description: "Libro de referencia en problemas de geometría olímpica.",
       type: "book" as const,
       viewLink: "https://web.evanchen.cc/geombook.html"
     },
     {
       title: "104 Number Theory Problems",
-      description: "Libro de un nivel avanzado de problemas de teoría de números.",
+      description: "Problemas de teoría de números de nivel avanzado.",
       type: "book" as const,
       viewLink: "https://www.amazon.com/104-Number-Theory-Problems-Training/dp/0817645276?ie=UTF8&s=books&qid=1199806669&sr=8-1"
     },
@@ -167,10 +257,16 @@ const MaterialPage: React.FC = () => {
     },
     {
       title: "Putnam and Beyond",
-      description: "Libro de problemas de nivel avanzado que cubre varios temas.",
+      description: "Problemas de nivel avanzado que cubren varios temas.",
       type: "book" as const,
       viewLink: "https://mathematicalolympiads.wordpress.com/wp-content/uploads/2012/08/putnam-and-beyond.pdf"
     }
+  ];
+
+  const trainingFolders: MaterialFolder<TrainingItem>[] = [
+    { id: 'curso-2026', title: 'Curso 2026–27', badge: '26–27', items: sessions2026 },
+    { id: 'curso-2025', title: 'Curso 2025–26', badge: '25–26', items: sessions2025 },
+    { id: 'libros', title: 'Bibliografía recomendada', badge: 'Libros', items: books, kind: 'books' },
   ];
 
   const videoLectures = [
@@ -222,19 +318,20 @@ const MaterialPage: React.FC = () => {
       {/* Material formativo */}
       <section className="mb-10">
         <h2 className="font-heading font-bold text-2xl text-foreground mb-4">Material formativo</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {trainingMaterials.map((item, index) => (
-            <MaterialItem 
-              key={index}
+        <MaterialFolders
+          folders={trainingFolders}
+          renderItem={(item) => (
+            <MaterialItem
               title={item.title}
               description={item.description}
               type={item.type}
-              // downloadLink={item.downloadLink}
+              downloadLink={item.downloadLink}
               viewLink={item.viewLink}
               internal={item.internal}
+              solutionsLink={item.solutionsLink}
             />
-          ))}
-        </div>
+          )}
+        />
       </section>
       
       {/* Vídeos formativos */}

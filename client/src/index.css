@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -23,5 +23,89 @@
 
   .font-heading {
     font-family: 'Montserrat', sans-serif;
+  }
+}
+/* ---------- Carpetas de material (MaterialFolders) ---------- */
+@layer components {
+  .folder-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 28px clamp(16px, 3vw, 28px); padding-top: 32px; }
+  .folder-badge { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(16px, 4.4vw, 22px); letter-spacing: -.01em; }
+  .folder-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+  .folder-art { position: relative; width: 100%; aspect-ratio: 4 / 3; max-height: 170px; }
+  .folder-tab { position: absolute; top: 0; left: 0; width: 44%; height: 26px; border-radius: 9px 9px 0 0; filter: brightness(.72); }
+  .folder-back { position: absolute; top: 16px; left: 0; right: 0; bottom: 0; border-radius: 4px 10px 10px 10px; filter: brightness(.72); }
+  .folder-paper {
+    position: absolute; left: 9%; right: 9%; top: 26px; bottom: 12px;
+    background: hsl(var(--background)); border: 1px solid hsl(var(--border)); border-radius: 6px;
+    transition: transform .45s cubic-bezier(.3, 1.5, .5, 1);
+  }
+  .folder-paper { overflow: hidden; }
+  .folder-fx { position: absolute; font-family: 'Caveat', cursive; font-weight: 700; line-height: 1; white-space: nowrap; font-size: clamp(13px, 3.6vw, 17px); }
+  .folder-fx sup { font-size: .62em; }
+  .folder-fx-a,.folder-fx-b,.folder-fx-c,.folder-fx-d{white-space:normal;max-width:84%;font-size:clamp(11px,3.2vw,15px);line-height:1.05}
+  .folder-fx-a{left:8%;top:9%;transform:rotate(-4deg);transform-origin:left top}
+  .folder-fx-b{right:8%;top:38%;text-align:right;transform:rotate(3deg);transform-origin:right top}
+  .folder-fx-c{left:8%;top:8%;transform:rotate(2.5deg);transform-origin:left top}
+  .folder-fx-d{left:10%;top:38%;transform:rotate(-3deg);transform-origin:left top}
+  .folder-star { position: absolute; width: 12px; height: 12px; }
+
+  .folder-books { position: absolute; inset: 0; }
+  .folder-book {
+    position: absolute; bottom: 12px; border-radius: 3px 6px 6px 3px;
+    box-shadow: inset 5px 0 0 rgba(0, 0, 0, .18), inset -1px 0 0 rgba(255, 255, 255, .25);
+    transition: transform .45s cubic-bezier(.3, 1.5, .5, 1);
+  }
+  .folder-book::before, .folder-book::after { content: ""; position: absolute; left: 5px; right: 0; height: 3px; background: rgba(255, 255, 255, .55); }
+  .folder-book::before { top: 14%; }
+  .folder-book::after { bottom: 14%; }
+  .folder-book b { position: absolute; left: 24%; right: 14%; top: 30%; height: 22%; border-radius: 2px; background: rgba(255, 255, 255, .85); }
+  .folder-book-1 { left: 10%; width: 24%; height: 68%; background: #b4413a; transform: rotate(-4deg); }
+  .folder-book-2 { left: 37%; width: 22%; height: 76%; background: #d49a3a; }
+  .folder-book-3 { left: 62%; width: 26%; height: 62%; background: #3f6b4f; transform: rotate(5deg); }
+  .folder:hover .folder-book-1, .folder:focus-visible .folder-book-1 { transform: translateY(-14px) rotate(-8deg); }
+  .folder:hover .folder-book-2, .folder:focus-visible .folder-book-2 { transform: translateY(-20px); }
+  .folder:hover .folder-book-3, .folder:focus-visible .folder-book-3 { transform: translateY(-10px) rotate(9deg); }
+  .folder.is-open .folder-book-1 { transform: translateY(-30px) rotate(-11deg); }
+  .folder.is-open .folder-book-2 { transform: translateY(-40px) rotate(-1deg); }
+  .folder.is-open .folder-book-3 { transform: translateY(-26px) rotate(12deg); }
+  .folder-front {
+    position: absolute; left: 0; right: 0; bottom: 0; top: 30%; border-radius: 10px;
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 14px 16px;
+    transform-origin: 50% 100%; transform: perspective(700px) rotateX(0deg);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .18) inset;
+    transition: transform .5s cubic-bezier(.3, 1.4, .5, 1), box-shadow .4s;
+  }
+
+  /* Hover: se entreabre */
+  .folder:hover .folder-front, .folder:focus-visible .folder-front {
+    transform: perspective(700px) rotateX(-26deg);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .18) inset, 0 14px 18px -12px rgba(12, 10, 9, .45);
+  }
+  .folder:hover .folder-paper-1, .folder:focus-visible .folder-paper-1 { transform: translateY(-16px) rotate(-3deg); }
+  .folder:hover .folder-paper-2, .folder:focus-visible .folder-paper-2 { transform: translateY(-9px) rotate(2.5deg); }
+
+  /* Abierta */
+  .folder.is-open .folder-front {
+    transform: perspective(700px) rotateX(-58deg);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .18) inset, 0 22px 24px -14px rgba(12, 10, 9, .5);
+  }
+  .folder.is-open .folder-paper-1 { transform: translateY(-34px) rotate(-5deg); }
+  .folder.is-open .folder-paper-2 { transform: translateY(-22px) rotate(4deg); }
+
+  /* Despliegue del contenido */
+  .folder-panel { border: 1px solid hsl(var(--border)); border-radius: 14px; background: #fafaf9; padding: clamp(14px, 4vw, 24px); }
+  .folder-panel { animation: folder-panel-in .4s cubic-bezier(.2, .9, .3, 1) both; }
+  .folder-panel.is-closing { animation: folder-panel-out .32s ease both; }
+  .folder-card { animation: folder-deal-out .6s cubic-bezier(.2, 1.25, .4, 1) both; }
+  .folder-card > * { height: 100%; }
+  .folder-panel.is-closing .folder-card { animation: folder-deal-back .28s ease both; animation-delay: 0s !important; }
+
+  @keyframes folder-panel-in { from { opacity: 0; clip-path: inset(0 0 100% 0 round 14px); } to { opacity: 1; clip-path: inset(0 0 0 0 round 14px); } }
+  @keyframes folder-panel-out { from { opacity: 1; clip-path: inset(0 0 0 0 round 14px); } to { opacity: 0; clip-path: inset(0 0 100% 0 round 14px); } }
+  @keyframes folder-deal-out { 0% { opacity: 0; transform: translateY(-70px) scale(.55) rotate(-5deg); } 55% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+  @keyframes folder-deal-back { to { opacity: 0; transform: translateY(-50px) scale(.7) rotate(3deg); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .folder-front, .folder-paper, .folder-book { transition: none; }
+    .folder-panel, .folder-panel.is-closing, .folder-card, .folder-panel.is-closing .folder-card { animation: none; }
   }
 }
