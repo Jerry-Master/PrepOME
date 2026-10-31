@@ -138,8 +138,13 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Geometría I',
       description: '"Angle chasing".',
       location: imag,
-      important: true,
-      speaker: 'Nicolás López Funes'
+      important: false,
+      speaker: 'Nicolás López Funes',
+      links: [{
+        url: 'material/Preparacion_Granada_2026_10_31.pdf',
+        description: 'Problemas de la sesión (PDF)',
+        external: true
+      }]
     },
     {
       date: '7 noviembre 2026',
