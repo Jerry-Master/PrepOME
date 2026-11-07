@@ -109,6 +109,12 @@ const MaterialPage: React.FC = () => {
   // Cada carpeta agrupa materiales. Las carpetas vacías no se muestran.
   const sessions2026: TrainingItem[] = [
     {
+      title: "Sesión 7 noviembre 2026: Teoría de Números I",
+      description: "Teoremas principales.",
+      type: "file" as const,
+      viewLink: "material/Preparacion_Granada_2026_11_07.pdf"
+    },
+    {
       title: "Sesión 31 octubre 2026: Geometría I",
       description: "Problemas de cazar ángulos.",
       type: "file" as const,

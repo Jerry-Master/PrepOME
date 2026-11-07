@@ -151,8 +151,13 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Teoría de Números I',
       description: 'Teoremas principales.',
       location: facultadCiencias,
-      important: true,
-      speaker: 'Nicolás López Funes'
+      important: false,
+      speaker: 'Nicolás López Funes',
+      links: [{
+        url: 'material/Preparacion_Granada_2026_11_07.pdf',
+        description: 'Problemas de la sesión (PDF)',
+        external: true
+      }]
     },
     {
       date: '14 noviembre 2026',
@@ -223,7 +228,7 @@ const CalendarPage: React.FC = () => {
       idx: "local"
     },
     {
-      date: 'Febrero 2027 (fecha tentativa)',
+      date: '29-31 enero 2027',
       title: 'Fase regional: Olimpiada Matemática Andaluza',
       description: 'La prueba consta de cuatro problemas a realizar en cuatro horas.',
       links: [{
@@ -231,7 +236,7 @@ const CalendarPage: React.FC = () => {
         description: "Ver edición anterior",
         external: true
       }],
-      location: 'Sede por confirmar (Andalucía)',
+      location: 'Cádiz / Jerez de la Frontera (Cádiz)',
       important: true,
       idx: "autonomico"
     },
