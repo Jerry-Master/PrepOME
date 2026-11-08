@@ -184,14 +184,6 @@ const CalendarPage: React.FC = () => {
       speaker: 'Pedro Saavedra Ortiz'
     },
     {
-      date: '5 diciembre 2026',
-      title: 'Sesión de preparación: Teoría de Números II',
-      description: 'Residuos cuadráticos y "Lifting The Exponent lemma".',
-      location: imag,
-      important: true,
-      speaker: 'Jose Pérez Cano'
-    },
-    {
       date: '12 diciembre 2026',
       title: 'Sesión de preparación: Resolución de problemas variados',
       description: 'Resolución de problemas variados combinando los temas vistos hasta el momento.',
@@ -201,8 +193,8 @@ const CalendarPage: React.FC = () => {
     },
     {
       date: '19 diciembre 2026',
-      title: 'Sesión de preparación: Resolución de problemas variados',
-      description: 'Última sesión de repaso antes del simulacro de la fase local.',
+      title: 'Sesión de preparación: Teoría de Números II',
+      description: 'Residuos cuadráticos y "Lifting The Exponent lemma".',
       location: facultadCiencias,
       important: true,
       speaker: 'Jose Pérez Cano'
