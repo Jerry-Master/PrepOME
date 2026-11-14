@@ -164,8 +164,17 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Álgebra II',
       description: 'Desigualdades.',
       location: facultadCiencias,
-      important: true,
-      speaker: 'Ivan Valero Terrón'
+      important: false,
+      speaker: 'Ivan Valero Terrón',
+      links: [{
+        url: 'material/Preparacion_Granada_2026_11_14.pdf',
+        description: 'Problemas de la sesión (PDF)',
+        external: true
+      }, {
+        url: 'https://artofproblemsolving.com/articles/files/MildorfInequalities.pdf',
+        description: 'The standard dozen (PDF)',
+        external: true
+      }]
     },
     {
       date: '21 noviembre 2026',
