@@ -181,8 +181,13 @@ const CalendarPage: React.FC = () => {
       title: 'Sesión de preparación: Geometría II',
       description: 'Geometría computacional.',
       location: imag,
-      important: true,
-      speaker: 'Jose Pérez Cano'
+      important: false,
+      speaker: 'Jose Pérez Cano',
+      links: [{
+        url: 'material/Preparacion_Granada_2026_11_21.pdf',
+        description: 'Problemas de la sesión (PDF)',
+        external: true
+      }]
     },
     {
       date: '28 noviembre 2026',
